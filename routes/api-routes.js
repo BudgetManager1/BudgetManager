@@ -3,6 +3,14 @@ var db = require("../models");
 var passport = require("../config/passport");
 
 module.exports = function(app) {
+  app.post('/api/budget', function(req, res){
+    db.Budget.create({
+      category: req.body.category,
+      amount_spent: req.body.amount_spent
+    }).then(function(dbBudget){
+      res.redirect('/members');
+    });
+  });
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
