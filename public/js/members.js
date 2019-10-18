@@ -5,3 +5,12 @@ $(document).ready(function() {
     $(".member-name").text(data.email);
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.collapsible');
+  var instances = M.Collapsible.init(elems, options);
+});
+
+$(document).ready(function(){
+  $('.collapsible').collapsible();
+});

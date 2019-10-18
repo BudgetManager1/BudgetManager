@@ -19,6 +19,7 @@
   "homepage": "https://github.com/BudgetManager1/BudgetManager#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "materialize-css": "^1.0.0-rc.2",
     "mysql2": "^1.7.0",
     "passport": "^0.4.0",
     "sequelize": "^5.19.8"
