@@ -11,7 +11,7 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
     Budget.associate = function (models) {
-        Budget.belongsTo(models.Budget, {
+        Budget.belongsTo(models.User, {
             foreignKey: {
                 allowNull: false
             },
