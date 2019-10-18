@@ -1,13 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "rootroot",
-<<<<<<< HEAD
-    "database": "database_development",
-=======
-    "database": "BudgetDatabase",
->>>>>>> master
-    "host": "127.0.0.1",
+    "username": "xeewpbfjafq16l6o",
+    "password": "cln6u1rfxsz7ipfj",
+    "database": "svgr1xbqmtaje3xx",
+    "host": "ixqxr3ajmyapuwmi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
@@ -18,10 +14,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
 }
