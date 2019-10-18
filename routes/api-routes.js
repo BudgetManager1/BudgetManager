@@ -6,8 +6,9 @@ module.exports = function(app) {
   app.post('/api/budget', function(req, res){
     db.Budget.create({
       category: req.body.category,
-      amount_spent: req.body.amount_spent
-    }).then(function(dbBudget){
+      amount_spent: req.body.amount_spent,
+      UserId: req.body.UserId
+    }).then(function(){
       res.redirect('/members');
     });
   });
