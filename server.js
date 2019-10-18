@@ -6,6 +6,7 @@ var passport = require("./config/passport");
 
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 8080;
+
 var db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
