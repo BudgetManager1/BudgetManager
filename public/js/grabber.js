@@ -1,55 +1,50 @@
-// $(document).on("click","#user-submit",function() {
-//     event.preventDefault();
-//     console.log("user hit the submit button");
-//     console.log($("#user-spending"));
-// });
+
 
 var spentInput = $("#spent");
 var category = $("#category");
-// var categoryInput = $(".test");
-var regEx = /^[0-9]+([,.][0-9]+)?$/g;
+var regEx = /^[0-9]+([.,][0-9]{2})?$/g;
 
 $(document).on("submit", "#user-spending", grabUserSubmit);
 
 function grabUserSubmit(event) {
     event.preventDefault();
-    console.log("clicked")
+    // console.log(spentInput);
+    var spentObj = spentInput.val().trim();     // console.log(spentTest);
+    var spentArr = spentObj.match(regEx);       //console.log(spentVal);  //spentVal returns as an object 
+    var spentVal = spentArr.join("");           //console.log(spentVal); converts back to string that only takes in integers and 2 decimal places
+    // console.log("clicked")
     // won't accept the form if fields have not been filled out
-    if (!spentInput.val().trim()) {
-        // console.log("user wants to submit form!")
+    if (!spentVal) {                            // console.log("user wants to submit form!") 
         return;
-    } 
-        // else if (make userInput obey parameters set by regEx)
-        // console.log(spentInput[0].value)
-    
+    }
     insertData({
-        amount_spent: spentInput.val().trim(),
+        amount_spent: spentVal,
         category: category.val().trim(),
+        UserId: 1,
     });
 }
 
-function insertData(budgetData) {
-    console.log(spent)
+function insertData(budgetData) {               // console.log(budgetData)
     $.post("/api/budget", budgetData)
-        .then(grabBudget);
+        .then(grabBudget);                      // console.log(grabBudget);
 }
 
 function grabBudget() {
     $.get('/api/budget', function (res) {
         console.log(res);
         var rowsToAdd = [];
-        // for (var i = 0; i < res.length; i++) {
-        //     rowsToAdd.push(createBudgetRow(res[i]));
-        // } 
+        for (var i = 0; i < res.length; i++) {
+            rowsToAdd.push(createBudgetRow(res[i]));
+        } 
         renderBudget(rowsToAdd);
         spentInput.val("");
     });
 }
 
 function createBudgetRow(budgetData) {
+    console.log(budgetData);
     var newTableRow = $("<tr>");
     newTableRow.data("Budget", budgetData);
     newTableRow.append(`<td> + ${budgetData.name} + </td>`);
-    console.log(budgetData);
     // if (budgetData.User)
 }
