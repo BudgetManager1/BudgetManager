@@ -10,6 +10,7 @@ module.exports = function (sequelize, DataTypes) {
             validate: { len: [1, 1000000] }
         }
     });
+    
     Budget.associate = function (models) {
         Budget.belongsTo(models.User, {
             foreignKey: {
