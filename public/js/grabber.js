@@ -25,18 +25,17 @@ function grabUserSubmit(event) {
     insertData({
         amount_spent: spentInput.val().trim(),
         category: category.val().trim(),
-        
     });
 }
 
 function insertData(budgetData) {
     console.log(spent)
-    $.post("/api/budgets", budgetData)
+    $.post("/api/budget", budgetData)
         .then(grabBudget);
 }
 
 function grabBudget() {
-    $.get('/api/budgets', function (res) {
+    $.get('/api/budget', function (res) {
         console.log(res);
         var rowsToAdd = [];
         // for (var i = 0; i < res.length; i++) {

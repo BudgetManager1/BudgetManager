@@ -2,7 +2,7 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  app.post('/api/budgets', function(req, res){
+  app.post('/api/budget', function(req, res){
     db.Budget.create({
       category: req.body.category,
       amount_spent: req.body.amount_spent,
