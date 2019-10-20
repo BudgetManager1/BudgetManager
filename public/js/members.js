@@ -18,6 +18,4 @@ $(document).ready(function () {
     var instances = M.FormSelect.init(elems, options);
   });   
   $('select').formSelect();
-
-
 }); // ends document ready function put everything before this
