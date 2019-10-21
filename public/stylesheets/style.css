@@ -2,3 +2,28 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+body{
+  background-color: #607d8b;
+} 
+.container{
+  background-color: #607d8b;
+} 
+
+.card-stacked{
+  background-color: #607d8b
+}
+.container-head{
+  background-color: blanchedalmond;
+}
+.card-content{
+  background-color: #4db6ac;
+}
+.card{
+  /* opacity: 0.5; */
+}
+h1{
+  font-family: 'Roboto', sans-serif;
+}
+
+
