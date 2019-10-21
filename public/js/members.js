@@ -14,15 +14,13 @@ $(document).ready(function () {
   $('.collapsible').collapsible();
 });
 
- document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.dropdown-trigger');
-    var instances = M.Dropdown.init(elems, options);
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, options);
   });
-
-  // Or with jQuery
-
-  $('.dropdown-trigger').dropdown();
-        
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems, options);
@@ -33,3 +31,4 @@ $(document).ready(function () {
   $(document).ready(function(){
     $('select').formSelect();
   });
+        
