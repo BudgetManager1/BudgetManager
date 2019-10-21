@@ -9,19 +9,21 @@ $(document).ready(function () {
 
     function grabUserSubmit(event) {
         event.preventDefault();
-        // console.log(spentInput);
-        var spentObj = spentInput.val().trim();     // console.log(spentTest);
-        var spentArr = spentObj.match(regEx);       //console.log(spentVal);  //spentVal returns as an object 
-        var spentVal = spentArr.join("");           //console.log(spentVal); converts back to string that only takes in integers and 2 decimal places
-        // console.log("clicked")
-        // won't accept the form if fields have not been filled out
-        if (!spentVal) {                            // console.log("user wants to submit form!") 
-            return;
-        }
-        insertData({
-            amount_spent: spentVal,
-            category: category.val().trim(),
-            UserId: 1,                              // hard coded
+        $.get('/api/user_data', function (userData) {   //gets the current user data
+            // console.log(spentInput);
+            var spentObj = spentInput.val().trim();     // console.log(spentTest);
+            var spentArr = spentObj.match(regEx);       //console.log(spentVal);  //spentVal returns as an object 
+            var spentVal = spentArr.join("");           //console.log(spentVal); converts back to string that only takes in integers and 2 decimal places
+            // console.log("clicked")
+            // won't accept the form if fields have not been filled out
+            if (!spentVal) {                            // console.log("user wants to submit form!") 
+                return;
+            }
+            insertData({
+                amount_spent: spentVal,
+                category: category.val().trim(),
+                UserId: userData.id,                              // hard coded
+            });
         });
     }
 
