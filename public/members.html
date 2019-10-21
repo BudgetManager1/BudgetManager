@@ -43,17 +43,17 @@
           <li>
             <div class="collapsible-header"><i class="material-icons">restaurant</i>Food</div>
             <div class="collapsible-body">
-                <table class="table table-striped">
-                    <thead>
-                      <tr id="foodTable">
-                        <th>ID</th>
-                        <th>Amount Spent</th>
-                        <th>Date</th>
-                        <th>Edit Transaction</th>
-                        <th>Delete Transaction</th>
-                      </tr>
-                    </thead>
-                  </table>
+              <table class="table table-striped">
+                <thead>
+                  <tr id="foodTable">
+                    <th>ID</th>
+                    <th>Amount Spent</th>
+                    <th>Date</th>
+                    <th>Edit Transaction</th>
+                    <th>Delete Transaction</th>
+                  </tr>
+                </thead>
+              </table>
             </div>
           </li>
           <li>
@@ -106,27 +106,26 @@
   <div class="container">
     <div class="row">
       <form class="col user-budget-data input-field s12" id="user-spending">
-        <div class="input-field col s2">
+        <div class="input-field col s4">
           <!-- This is for testnig -->
-          <div class="input-field col s6">
-              <input placeholder="Ex. Medical" id="category" type="text" class="validate">
-              <label for="category_select">Category</label>
-            </div>
-          <!-- <select>
+            <!-- <input placeholder="Ex. Medical" id="category" type="text" class="validate">
+            <label for="category_select">Category</label> -->
+            <select id="category" class="validate">
             <option value="" disabled selected>Choose your category</option>
             <option value="1">Option 1</option>
             <option value="2">Option 2</option>
             <option value="3">Option 3</option>
           </select>
-          <label>Category Select</label> -->
-        </div>
-        <div class="input-field col s6">
+          <label>Category Select</label>
+          </div>
+          <div class="input-field col s6">
             <input placeholder="Ex. 21.94" id="spent" type="text" class="validate">
             <label for="amount_spent">Amount Spent</label>
           </div>
-        <button class="btn waves-effect waves-light" id="user-submit" type="submit" name="action">Submit
+          <button class="btn waves-effect waves-light" id="user-submit" type="submit" name="action">Submit
             <i class="material-icons right">send</i>
           </button>
+        </div>
       </form>
     </div>
   </div>
