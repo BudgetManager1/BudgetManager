@@ -62,15 +62,15 @@
               <option value="7">Medical</option>
               <option value="8"></option>
             </select>
-              <label>Category Select</label>
-            </div>
+            <label>Category Select</label>
+          </div>
         </div>
         <button class="btn waves-effect waves-light" type="submit" id="submit" name="action">Submit
           <i class="material-icons right">send</i>
         </button>
       </form>
-    
-  </div>
+
+    </div>
   </div>
   <br>
   <div class="container">
@@ -122,11 +122,36 @@
         </div>
       </div>
       <div class="col s4">
+        <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Add your goal!</a>
+        <div id="modal2" class="modal">
+          <form class="col s12" id='form'>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="name" type="text" class="validate">
+                <label for="name">Goal</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="amount" type="number" class="validate">
+                <label for="amount">Total Cost</label>
+              </div>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit" id="submit1" name="action">Submit
+              <i class="material-icons right">send</i>
+            </button>
+          </form>
+        </div>
         <div class="card">
           <div class="card-content">
-            <span class="card-title">Card Title</span>
-            <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
+            <span class="card-title"><strong>Goal:</strong></span>
+            <div id="myProgress">
+              <div id="myBar">0$</div>
+              <!-- <div class="input-field col s4">
+                <input id="name" type="text" class="validate">
+                <label for="name">Name</label>
+              </div> -->
+            </div>
           </div>
         </div>
       </div>
