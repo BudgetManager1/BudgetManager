@@ -8,12 +8,14 @@ $(document).ready(function () {
     $(document).on("submit", "#user-spending", grabUserSubmit);
 
     function grabUserSubmit(event) {
-        event.preventDefault();                         
+        event.preventDefault();
         $.get('/api/user_data', function (userData) {   // gets the current user data
             // console.log(spentInput);
             var spentObj = spentInput.val().trim();     // console.log(spentTest);
             var spentArr = spentObj.match(regEx);       // console.log(spentVal);  // spentVal returns as an object 
             var spentVal = spentArr.join("");           // console.log(spentVal); converts back to string that only takes in integers and 2 decimal places
+
+            var description = $('#name').val().trim();
             // console.log("clicked")
             // won't accept the form if fields have not been filled out
             if (!spentVal) {                            // console.log("user wants to submit form!") 
@@ -22,9 +24,10 @@ $(document).ready(function () {
             insertData({
                 amount_spent: spentVal,
                 category: category.val().trim(),
+                description: description,
                 UserId: userData.id,
             });
-        }).then(function(){
+        }).then(function () {
             location.reload();
         });
     }
@@ -36,7 +39,7 @@ $(document).ready(function () {
 
     function grabBudget() {
         $.get('/api/budget', function (res) {
-            console.log(res);
+            // console.log(res);
             spentInput.val("");
             category.val("");
         });
