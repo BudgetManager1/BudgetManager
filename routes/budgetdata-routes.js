@@ -6,38 +6,30 @@ module.exports = function (app) {
   // We set the value to an array of the models we want to include in a left outer join
   // In this case, just db.User
   app.get("/api/budget/:id", function (req, res) {
-            // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-            // console.log(req.params.id)
-            // console.log(req.user)
-            // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    if (req.user.id == req.params.id) {
-      console.log("matching user id")
+    // console.log(req.params.id)
+    // console.log(req.user)
+    if (req.user.id == req.params.id) { // console.log("matching user id")
       db.Budget.findAll({
         where: {
           UserId: req.params.id
         },
         include: [db.User]
-      }).then(function (dbBudget) {
+      }).then(function (dbBudget) { // console.log(dbBudget)
         res.json(dbBudget);
-        console.log(dbBudget)
       });
-    } 
+    }
     else if (req.user.id === undefined) {
       console.log("undefined user")
-      res.redirect ("/");
+      res.redirect("/");
     } else { //console.log("redirected to members")
-      res.redirect ("/members");
+      res.redirect("/members");
     }
   });
-
-  
 
   app.post("/api/budget", function (req, res) {
     console.log(res)
     console.log(req.body)
     db.Budget.create(req.body);
   });
-
-
 
 }; // ends module.exports
