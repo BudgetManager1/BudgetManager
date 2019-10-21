@@ -24,6 +24,8 @@ $(document).ready(function () {
                 category: category.val().trim(),
                 UserId: userData.id,                              // hard coded
             });
+        }).then(function(){
+            location.reload();
         });
     }
 
