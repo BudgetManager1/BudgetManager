@@ -4,11 +4,14 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        description: {
+            type: DataTypes.STRING
+        },
         amount_spent: {
             type: DataTypes.DECIMAL(10, 2),
             allowNull: false,
             validate: { len: [1, 1000000] }
-        }, 
+        }
         // UserId: {
         //     type: DataTypes.INTEGER,
         //     primaryKey: true,
