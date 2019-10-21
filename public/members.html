@@ -42,8 +42,19 @@
         <ul class="collapsible collapsible-accordion">
           <li>
             <div class="collapsible-header"><i class="material-icons">restaurant</i>Food</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor
-                sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.</span></div>
+            <div class="collapsible-body">
+                <table class="table table-striped">
+                    <thead>
+                      <tr id="foodTable">
+                        <th>ID</th>
+                        <th>Amount Spent</th>
+                        <th>Date</th>
+                        <th>Edit Transaction</th>
+                        <th>Delete Transaction</th>
+                      </tr>
+                    </thead>
+                  </table>
+            </div>
           </li>
           <li>
             <div class="collapsible-header"><i class="material-icons">place</i>Travel</div>
@@ -94,24 +105,28 @@
   <!-- Testing dropdown. we can move this to fit somewhere later. -->
   <div class="container">
     <div class="row">
-      <form class="col user-budget-data input-field s12">
+      <form class="col user-budget-data input-field s12" id="user-spending">
         <div class="input-field col s2">
-          <select>
-            <option value="" disabled selected>Choose your option</option>
+          <!-- This is for testnig -->
+          <div class="input-field col s6">
+              <input placeholder="Ex. Medical" id="category" type="text" class="validate">
+              <label for="category_select">Category</label>
+            </div>
+          <!-- <select>
+            <option value="" disabled selected>Choose your category</option>
             <option value="1">Option 1</option>
             <option value="2">Option 2</option>
             <option value="3">Option 3</option>
           </select>
-          <label>Materialize Select</label>
+          <label>Category Select</label> -->
         </div>
-        <div class="col s6">
-          Amount Spent:
-          <div class="input-field inline">
-            <input id="email_inline" type="email" class="validate">
-            <label for="email_inline">Enter Amount</label>
-            <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+        <div class="input-field col s6">
+            <input placeholder="Ex. 21.94" id="spent" type="text" class="validate">
+            <label for="amount_spent">Amount Spent</label>
           </div>
-        </div>
+        <button class="btn waves-effect waves-light" id="user-submit" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+          </button>
       </form>
     </div>
   </div>
@@ -121,6 +136,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script type="text/javascript" src="js/members.js"></script>
+  <script type="text/javascript" src="js/grabber.js"></script>
+
 </body>
 
 </html>

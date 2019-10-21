@@ -8,7 +8,12 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.DECIMAL(10, 2),
             allowNull: false,
             validate: { len: [1, 1000000] }
-        }
+        }, 
+        // UserId: {
+        //     type: DataTypes.INTEGER,
+        //     primaryKey: true,
+        //     autoIncrement: true
+        // },
     });
     
     Budget.associate = function (models) {
