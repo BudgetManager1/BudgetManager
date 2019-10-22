@@ -18,6 +18,7 @@ $(document).ready(function () {
     var elems = document.querySelectorAll('.modal');
     var instances = M.Modal.init(elems, options);
   });
+
   $('.modal').modal();
   document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('select');
@@ -37,7 +38,7 @@ $(document).ready(function () {
   });
 
   $('select').formSelect();
-  
+
   //progress for bar
   var i = 0;
   function move() {
@@ -61,27 +62,27 @@ $(document).ready(function () {
 });
 
 
-$("#submit1").on("click", function(event){
-  
+$("#submit1").on("click", function (event) {
+
   var goal = {
     goalName: $("#goal").val().trim(),
     total: $("#amount").val().trim()
   };
-  
+
   $.post("/api/goals", goal)
-  
-  .then(function(data){
-    console.log(data);
-    
-    alert("adding goal")
-    
-    $("#goal").val(""),
-    $("#amount").val("")
-    $("#wishList").text(`${data.goalName}`)
-    $("#cost").text(`${data.total}$`)
-  });
-  
+
+    .then(function (data) {
+      console.log(data);
+
+      alert("adding goal")
+
+      $("#goal").val(""),
+        $("#amount").val("")
+      $("#wishList").text(`${data.goalName}`)
+      $("#cost").text(`${data.total}$`)
+    });
+
   event.preventDefault();
-  
-  
+
+
 })

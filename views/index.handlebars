@@ -24,9 +24,10 @@
     <div id="modal1" class="modal">
         <form class="col s12" id='user-spending'>
             <div class="row">
+                {{!-- can we make this smaller and centered? --}}
                 <div class="input-field col s12">
                     <input id="spent" type="number" class="validate">
-                    <label for="spent">$Total</label>
+                    <label for="spent">Total $$$ Spent</label>
                 </div>
             </div>
             <div class="row">
@@ -66,7 +67,7 @@
                 <li>
                     <div class="collapsible-header"><i class="material-icons">restaurant</i>Food</div>
                     <div class="collapsible-body"><span class="transactions">
-                          <table class="table table-striped">
+                            <table class="table table-striped">
                                 <thead>
                                     <tr>
                                         <th>Description</th>
@@ -79,14 +80,15 @@
                                         <td>{{amount_spent}}</td>
                                         <td>Edit this!</td>
                                         <td>
-                                            <button class="deletebutton" data-id="{{this.id}}">Delete transaction.</button>
+                                            <button class="deletebutton" data-id="{{this.id}}">Delete
+                                                transaction.</button>
                                         </td>
                                     </tr>
                                     {{/each}}
                                     </tr>
                                 </thead>
                             </table>
-                    </span></div>
+                        </span></div>
                 </li>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">place</i>Travel</div>
@@ -116,27 +118,162 @@
                 </li>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">accessibility</i>Clothing</div>
-                    <div class="collapsible-body"><span class="transactions"></span></div>
+                    <div class="collapsible-body"><span class="transactions">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>Amount Spent</th>
+                                        <th>Edit Transaction</th>
+                                        <th>Delete</th>
+                                        {{#each dbBudget.Clothing}}
+                                    <tr>
+                                        <td>{{description}}</td>
+                                        <td>{{amount_spent}}</td>
+                                        <td>Edit this!</td>
+                                        <td>
+                                            <button class="deletebutton" data-id="{{this.id}}">Delete
+                                                transaction.</button>
+                                        </td>
+                                    </tr>
+                                    {{/each}}
+                                    </tr>
+                                </thead>
+                            </table>
+                        </span></div>
                 </li>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">local_movies</i>Entertainment</div>
-                    <div class="collapsible-body"><span class="transactions"></span></div>
+                    <div class="collapsible-body"><span class="transactions">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>Amount Spent</th>
+                                        <th>Edit Transaction</th>
+                                        <th>Delete</th>
+                                        {{#each dbBudget.Travel}}
+                                    <tr>
+                                        <td>{{description}}</td>
+                                        <td>{{amount_spent}}</td>
+                                        <td>Edit this!</td>
+                                        <td>
+                                            <button class="deletebutton" data-id="{{this.id}}">Delete
+                                                transaction.</button>
+                                        </td>
+                                    </tr>
+                                    {{/each}}
+                                    </tr>
+                                </thead>
+                            </table>
+                        </span>
+                    </div>
                 </li>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">whatshot</i>Utilities</div>
-                    <div class="collapsible-body"><span class="transactions"></span></div>
+                    <div class="collapsible-body"><span class="transactions">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Amount Spent</th>
+                                    <th>Edit Transaction</th>
+                                    <th>Delete</th>
+                                    {{#each dbBudget.Utilities}}
+                                <tr>
+                                    <td>{{description}}</td>
+                                    <td>{{amount_spent}}</td>
+                                    <td>Edit this!</td>
+                                    <td>
+                                        <button class="deletebutton" data-id="{{this.id}}">Delete
+                                            transaction.</button>
+                                    </td>
+                                </tr>
+                                {{/each}}
+                                </tr>
+                            </thead>
+                        </table>
+                        </span>
+                    </div>
                 </li>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">home</i>Housing</div>
-                    <div class="collapsible-body"><span class="transactions"></span></div>
+                    <div class="collapsible-body"><span class="transactions">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Amount Spent</th>
+                                    <th>Edit Transaction</th>
+                                    <th>Delete</th>
+                                    {{#each dbBudget.Housing}}
+                                <tr>
+                                    <td>{{description}}</td>
+                                    <td>{{amount_spent}}</td>
+                                    <td>Edit this!</td>
+                                    <td>
+                                        <button class="deletebutton" data-id="{{this.id}}">Delete
+                                            transaction.</button>
+                                    </td>
+                                </tr>
+                                {{/each}}
+                                </tr>
+                            </thead>
+                        </table>
+                        </span>
+                    </div>
                 </li>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">local_hospital</i>Medical</div>
-                    <div class="collapsible-body"><span class="transactions"></span></div>
+                    <div class="collapsible-body"><span class="transactions">
+                                                    <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>Amount Spent</th>
+                                        <th>Edit Transaction</th>
+                                        <th>Delete</th>
+                                        {{#each dbBudget.Medical}}
+                                    <tr>
+                                        <td>{{description}}</td>
+                                        <td>{{amount_spent}}</td>
+                                        <td>Edit this!</td>
+                                        <td>
+                                            <button class="deletebutton" data-id="{{this.id}}">Delete
+                                                transaction.</button>
+                                        </td>
+                                    </tr>
+                                    {{/each}}
+                                    </tr>
+                                </thead>
+                            </table>
+                    </span></div>
                 </li>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">person</i>Personal</div>
-                    <div class="collapsible-body"><span class="transactions"></span></div>
+                    <div class="collapsible-body"><span class="transactions">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>Amount Spent</th>
+                                        <th>Edit Transaction</th>
+                                        <th>Delete</th>
+                                        {{#each dbBudget.Personal}}
+                                    <tr>
+                                        <td>{{description}}</td>
+                                        <td>{{amount_spent}}</td>
+                                        <td>Edit this!</td>
+                                        <td>
+                                            <button class="deletebutton" data-id="{{this.id}}">Delete
+                                                transaction.</button>
+                                        </td>
+                                    </tr>
+                                    {{/each}}
+                                    </tr>
+                                </thead>
+                            </table>
+                        </span></div>
                 </li>
 
             </ul>
