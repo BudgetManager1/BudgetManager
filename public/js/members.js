@@ -78,7 +78,7 @@ $("#submit1").on("click", function(event){
     $("#goal").val(""),
     $("#amount").val("")
     $("#wishList").text(`${data.goalName}`)
-    $("#cost").text(`${data.total}$`)
+    $("#cost").text(`$${data.total}`)
   });
   
   event.preventDefault();
