@@ -40,6 +40,7 @@ module.exports = function (app) {
           categoryArr.push(dbBudget[i].category)
         }
       }
+
       var infoArr = [];
       for (var i = 0; i < dbBudget.length; i++) {
         for (var j = 0; j < categoryArr.length; j++)
@@ -50,26 +51,9 @@ module.exports = function (app) {
           }
       }
 
-      for (infoArr = 0; i < infoArr.length; i++) {
-        console.log(infoArr[i]);
-        // budgetInfo[infoArr[i].category].push(
-        //   {
-        //     description: infoArr[i].description,
-        //     amount_spent: infoArr[i].amount_spent,
-        //     createdAt: infoArr[i].createdAt
-        //   }
-        // )
-        // console.log(infoArr[i])
-      }
-      res.render('index', { dbBudget: infoArr });
-
-    });
-  });
-  /* 
-      // console.log(categoryArr);
       // for (var i = 0; i < infoArr.length; i++) {
       //   console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-      //   console.log(infoArr[i].dataValues);
+      //   // console.log(infoArr[i].dataValues);
       //   console.log(infoArr[i].dataValues.id);
       //   console.log(infoArr[i].dataValues.category);
       //   console.log(infoArr[i].dataValues.description);
@@ -78,19 +62,7 @@ module.exports = function (app) {
       //   console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
       // }
 
-    arrs are objects
-    var arr = [1,2,3] arr.push(4)
-    arr[1] = 2
-    obj.1 = 2
-    var obj = {
-      0: 1,
-      1: 2,
-      2: 3,
-      3: 4,
-      length: 4
-    }
-
-          budgetInfo = {
+      budgetInfo = {
         Travel: [
         ],
         Entertainment: [
@@ -109,8 +81,40 @@ module.exports = function (app) {
         ],
         Personal: [
         ],
-
       }
+
+      for (var i = 0; i < infoArr.length; i++) {
+        // console.log(infoArr[i]);
+        budgetInfo[infoArr[i].category].push(
+          {
+            description: infoArr[i].description,
+            amount_spent: infoArr[i].amount_spent,
+            createdAt: infoArr[i].createdAt
+          }
+        )
+        // console.log(infoArr[i])
+      }
+      console.log(budgetInfo);
+      res.render('index', { dbBudget: budgetInfo });
+
+    });
+  });
+  /* 
+
+
+    arrs are objects
+    var arr = [1,2,3] arr.push(4)
+    arr[1] = 2
+    obj.1 = 2
+    var obj = {
+      0: 1,
+      1: 2,
+      2: 3,
+      3: 4,
+      length: 4
+    }
+
+
       */
 
 
