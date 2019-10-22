@@ -14,7 +14,7 @@ module.exports = function (app) {
           UserId: req.params.id
         },
         include: [db.User]
-      }).then(function (dbBudget) { // console.log(dbBudget)
+      }).then(function (dbBudget) { console.log(dbBudget)
         res.json(dbBudget);
       });
     }
@@ -29,9 +29,8 @@ module.exports = function (app) {
   
 
   app.post("/api/budget", function (req, res) {
-    console.log(res)
-    console.log(req.body)
+    // console.log(res)
+    // console.log(req.body)
     db.Budget.create(req.body);
   });
-
 }; // ends module.exports

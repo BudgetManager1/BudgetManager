@@ -29,12 +29,12 @@
                     <label for="spent">$Total</label>
                 </div>
             </div>
-            {{!-- <div class="row">
+            <div class="row">
                 <div class="input-field col s12">
                     <input id="name" type="text" class="validate">
-                    <label for="name">Name</label>
+                    <label for="name">Description</label>
                 </div>
-            </div> --}}
+            </div>
             <div class="row">
                 <div class="input-field col s12">
                     <select id="category">
@@ -68,7 +68,34 @@
                 </li>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">place</i>Travel</div>
-                    <div class="collapsible-body"><span class="transactions"></span></div>
+                    <div class="collapsible-body"><span class="transactions">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        {{!-- Category: {{this.category}}<br>
+Amount: {{this.amount_spent}}<br>
+Personal Id: {{this.UserId}}<br> --}}
+                                        <th>Description</th>
+                                        <th>Amount Spent</th>
+                                        <th>Edit Transaction</th>
+                                        <th>Delete</th>
+                                        {{#each dbBudget}}
+                                    <tr>
+                                        <td>
+                                            {{description}}
+                                        </td>
+                                        <td>
+                                            {{amount_spent}}
+                                        </td>
+                                        <td>
+                                            Edit this!
+                                        </td>
+                                    </tr>
+                                    {{/each}}
+                                    </tr>
+                                </thead>
+                            </table>
+                        </span></div>
                 </li>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">accessibility</i>Clothing</div>
@@ -107,16 +134,43 @@
             </div>
         </div>
         <div class="col s4">
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Add your goal!</a>
+            <div id="modal2" class="modal">
+                <form class="col s12" id='form'>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="name" type="text" class="validate">
+                            <label for="name">Goal</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="amount" type="number" class="validate">
+                            <label for="amount">Total Cost</label>
+                        </div>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit" id="submit1" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </form>
+            </div>
             <div class="card">
                 <div class="card-content">
-                    <span class="card-title">Card Title</span>
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively.</p>
+                    <span class="card-title"><strong>Goal:</strong></span>
+                    <div id="myProgress">
+                        <div id="myBar">0$</div>
+                        <!-- <div class="input-field col s4">
+                <input id="name" type="text" class="validate">
+                <label for="name">Name</label>
+              </div> -->
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
