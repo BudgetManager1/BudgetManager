@@ -20,7 +20,7 @@
           <div class="card-content">
             <p>Total: <i class="small material-icons">attach_money</i></p> -->
     <br>
-    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Input the your transaction here!</a>
+    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Input your transaction here!</a>
     <div id="modal1" class="modal">
         <form class="col s12" id='user-spending'>
             <div class="row">
@@ -120,13 +120,7 @@
             </ul>
         </div>
         <div class="col s4">
-            <div class="card">
-                <div class="card-content">
-                    <span class="card-title">Card Title</span>
-                    <p>I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively.</p>
-                </div>
-            </div>
+            <canvas id="doughnut-chart" width="300" height="300"></canvas>
         </div>
         <div class="col s4">
             <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Add your goal!</a>
@@ -165,10 +159,10 @@
     </div>
 </div>
 
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script type="text/javascript" src="js/doughnut-chart.js"></script>
 <script type="text/javascript" src="js/members.js"></script>
 <script type="text/javascript" src="js/grabber.js"></script>
 {{!-- <script type="text/javascript" src="js/delete.js"></script> --}}
