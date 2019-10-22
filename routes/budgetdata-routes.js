@@ -14,7 +14,8 @@ module.exports = function (app) {
           UserId: req.params.id
         },
         include: [db.User]
-      }).then(function (dbBudget) { console.log(dbBudget)
+      }).then(function (dbBudget) {
+        // console.log(dbBudget)
         res.json(dbBudget);
       });
     }
