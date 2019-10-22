@@ -73,14 +73,15 @@ $("#submit1").on("click", function(event){
   .then(function(data){
     console.log(data);
     
-    // alert("adding goal")
+    alert("adding goal")
     
     $("#goal").val(""),
     $("#amount").val("")
     $("#wishList").text(`${data.goalName}`)
-    // event.preventDefault();
+    $("#cost").text(`${data.total}$`)
   });
   
+  event.preventDefault();
   
   
 })
