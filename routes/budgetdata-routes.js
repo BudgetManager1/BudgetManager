@@ -15,7 +15,9 @@ module.exports = function (app) {
         },
         include: [db.User]
       }).then(function (dbBudget) { console.log(dbBudget)
-        res.json(dbBudget);
+        // res.json(dbBudget);
+      res.redirect("/members");
+
       });
     }
     else if (req.user.id === undefined) {
