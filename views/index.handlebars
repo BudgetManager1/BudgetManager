@@ -46,6 +46,7 @@
                         <option value="Utilities">Utilities</option>
                         <option value="Housing">Housing</option>
                         <option value="Medical">Medical</option>
+                        <option value="Medical">Personal</option>
                     </select>
                     <label>Category Select</label>
                 </div>
@@ -64,7 +65,28 @@
             <ul class="collapsible collapsible-accordion">
                 <li>
                     <div class="collapsible-header"><i class="material-icons">restaurant</i>Food</div>
-                    <div class="collapsible-body"><span class="transactions"></span></div>
+                    <div class="collapsible-body"><span class="transactions">
+                          <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>Amount Spent</th>
+                                        <th>Edit Transaction</th>
+                                        <th>Delete</th>
+                                        {{#each dbBudget.Food}}
+                                    <tr>
+                                        <td>{{description}}</td>
+                                        <td>{{amount_spent}}</td>
+                                        <td>Edit this!</td>
+                                        <td>
+                                            <button class="deletebutton" data-id="{{this.id}}">Delete transaction.</button>
+                                        </td>
+                                    </tr>
+                                    {{/each}}
+                                    </tr>
+                                </thead>
+                            </table>
+                    </span></div>
                 </li>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">place</i>Travel</div>
@@ -76,7 +98,7 @@
                                         <th>Amount Spent</th>
                                         <th>Edit Transaction</th>
                                         <th>Delete</th>
-                                        {{#each dbBudget}}
+                                        {{#each dbBudget.Travel}}
                                     <tr>
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
