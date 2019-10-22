@@ -68,7 +68,34 @@
                 </li>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">place</i>Travel</div>
-                    <div class="collapsible-body"><span class="transactions"></span></div>
+                    <div class="collapsible-body"><span class="transactions">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        {{!-- Category: {{this.category}}<br>
+Amount: {{this.amount_spent}}<br>
+Personal Id: {{this.UserId}}<br> --}}
+                                        <th>Description</th>
+                                        <th>Amount Spent</th>
+                                        <th>Edit Transaction</th>
+                                        <th>Delete</th>
+                                        {{#each dbBudget}}
+                                    <tr>
+                                        <td>
+                                            {{description}}
+                                        </td>
+                                        <td>
+                                            {{amount_spent}}
+                                        </td>
+                                        <td>
+                                            Edit this!
+                                        </td>
+                                    </tr>
+                                    {{/each}}
+                                    </tr>
+                                </thead>
+                            </table>
+                        </span></div>
                 </li>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">accessibility</i>Clothing</div>
@@ -143,11 +170,7 @@
     </div>
 </div>
 
-{{#each dbBudget}}
-    Category: {{this.category}}<br>
-    Amount: {{this.amount_spent}}<br>
-    Personal Id: {{this.UserId}}<br>
-{{/each}}
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
