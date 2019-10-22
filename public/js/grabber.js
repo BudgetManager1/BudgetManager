@@ -21,7 +21,7 @@ $(document).ready(function () {
             if (!spentVal) {                            // console.log("user wants to submit form!") 
                 return;
             }
-            insertData({
+            return insertData({
                 amount_spent: spentVal,
                 category: category.val().trim(),
                 description: description,
@@ -33,12 +33,12 @@ $(document).ready(function () {
     }
 
     function insertData(budgetData) {               // console.log(budgetData) -- object
-        $.post("/api/budget", budgetData)
+        return $.post("/api/budget", budgetData)
             .then(grabBudget);                      // console.log(grabBudget);
     }
 
     function grabBudget() {
-        $.get('/api/budget', function (res) {
+        return $.get('/api/budget', function (res) {
             // console.log(res);
             spentInput.val("");
             category.val("");
