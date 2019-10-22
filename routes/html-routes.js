@@ -32,8 +32,6 @@ module.exports = function (app) {
       },
       include: [db.User]
     }).then(function (dbBudget) {
-      // res.render('index', { dbBudget: dbBudget });
-
       var categoryArr = [];
       for (var i = 0; i < dbBudget.length; i++) {
         if (!categoryArr.includes(dbBudget[i].category)) {
@@ -45,22 +43,10 @@ module.exports = function (app) {
       for (var i = 0; i < dbBudget.length; i++) {
         for (var j = 0; j < categoryArr.length; j++)
           if (dbBudget[i].category == categoryArr[j]) {
-            // console.log(dbBudget[i]);
             infoArr.push(dbBudget[i]);
             console.log(infoArr)
           }
       }
-
-      // for (var i = 0; i < infoArr.length; i++) {
-      //   console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-      //   // console.log(infoArr[i].dataValues);
-      //   console.log(infoArr[i].dataValues.id);
-      //   console.log(infoArr[i].dataValues.category);
-      //   console.log(infoArr[i].dataValues.description);
-      //   console.log(infoArr[i].dataValues.amount_spent);
-      //   console.log(infoArr[i].dataValues.createdAt)
-      //   console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-      // }
 
       budgetInfo = {
         Travel: [
@@ -84,41 +70,18 @@ module.exports = function (app) {
       }
 
       for (var i = 0; i < infoArr.length; i++) {
-        // console.log(infoArr[i]);
         budgetInfo[infoArr[i].category].push(
           {
             description: infoArr[i].description,
             amount_spent: infoArr[i].amount_spent,
-            createdAt: infoArr[i].createdAt
+            createdAt: infoArr[i].createdAt,
           }
         )
-        // console.log(infoArr[i])
-      }
-      console.log(budgetInfo);
+      }                                                   // console.log(budgetInfo);
       res.render('index', { dbBudget: budgetInfo });
 
     });
   });
-  /* 
-
-
-    arrs are objects
-    var arr = [1,2,3] arr.push(4)
-    arr[1] = 2
-    obj.1 = 2
-    var obj = {
-      0: 1,
-      1: 2,
-      2: 3,
-      3: 4,
-      length: 4
-    }
-
-
-      */
-
-
-
 
   app.get("/budget", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
