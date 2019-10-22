@@ -32,6 +32,13 @@ module.exports = function(app) {
     res.redirect("/");
   });
 
+
+  app.post("/api/goals", function(req, res){
+    var goal = req.body;
+    
+    res.json(goal);
+  })
+
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", function(req, res) {
     if (!req.user) {

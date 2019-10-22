@@ -59,3 +59,28 @@ $(document).ready(function () {
     }
   }
 });
+
+
+$("#submit1").on("click", function(event){
+  
+  var goal = {
+    goalName: $("#goal").val().trim(),
+    total: $("#amount").val().trim()
+  };
+  
+  $.post("/api/goals", goal)
+  
+  .then(function(data){
+    console.log(data);
+    
+    // alert("adding goal")
+    
+    $("#goal").val(""),
+    $("#amount").val("")
+    $("#wishList").text(`${data.goalName}`)
+    // event.preventDefault();
+  });
+  
+  
+  
+})
