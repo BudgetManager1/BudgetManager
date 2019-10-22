@@ -16,7 +16,7 @@ var Chart = require('chart.js');
 //         }
 //     }
 // });
-new Chart(document.getElementById("pie-chart"), {
+new Chart(document.getElementById("pie-chart").getContext('2d'), {
     type: 'pie',
     data: {
         labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
