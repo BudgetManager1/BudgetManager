@@ -45,44 +45,15 @@ $(document).ready(function () {
         });
     };
 
-    // $(".deletebutton").on("click", function(event) {
     $(document).on("click", ".deletebutton", function () {
-        // console.log("you clicked me");
         var id = $(this).data("id");
         console.log(id)
-        // // Send the DELETE request.
+        // Send the DELETE request.
         $.ajax({
             method: "DELETE",
-            url: "/api/budget/" + id 
-        }).then(function(data){
-            location.reload();          
-        }) 
-        // // Reload the page to get the updated list
+            url: "/api/budget/" + id
+        }).then(function (data) {
+            location.reload();                      // Reload the page to get the updated list
+        })
     });
 });     // end document ready
-
-
-
-
-// Old functions
-
-    // function grabBudget() {
-    //     $.get('/api/budget', function (res) {
-    //         console.log(res);
-    //         var rowsToAdd = [];
-    //         for (var i = 0; i < res.length; i++) {
-    //             rowsToAdd.push(createBudgetRow(res[i]));
-    //         }
-    //         // renderBudget(rowsToAdd);     // not created yet
-    //         spentInput.val("");
-    //         category.val("");                       // remove once we create the dropdown menu for categories
-    //     });
-    // }
-
-    // function createBudgetRow(budgetData) {
-    //     console.log(budgetData);
-    //     var newTableRow = $("<tr>");
-    //     newTableRow.data("Budget", budgetData);
-    //     newTableRow.append(`<td> + ${budgetData.name} + </td>`);
-    //     // if (budgetData.User)
-    // }
