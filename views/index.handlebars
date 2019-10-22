@@ -20,7 +20,7 @@
           <div class="card-content">
             <p>Total: <i class="small material-icons">attach_money</i></p> -->
     <br>
-    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Input the your transaction here!</a>
+    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Input your transaction here!</a>
     <div id="modal1" class="modal">
         <form class="col s12" id='user-spending'>
             <div class="row">
@@ -125,6 +125,9 @@ Personal Id: {{this.UserId}}<br> --}}
             </ul>
         </div>
         <div class="col s4">
+            <canvas id="doughnut-chart" width="300" height="300"></canvas>
+        </div>
+        <div class="col s4">
             <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Add your goal!</a>
             <div id="modal2" class="modal">
                 <form class="col s12" id='form'>
@@ -160,28 +163,6 @@ Personal Id: {{this.UserId}}<br> --}}
         </div>
     </div>
 </div>
-<div class="container">
-    {{!-- <canvas id="doughnut-chart" width="300" height="300"></canvas> --}}
-    <canvas id="pie-chart" width="300" height="300"></canvas>
-</div>
-<script>
-    var budgetChart = new Chart($('#doughnut-chart'), {
-        type: 'doughnut',
-        data: {
-            labels: ['Food', 'Travel', 'Clothing', 'Entertainment', 'Utilities', 'Housing', 'Medical'],
-            datasets: [{
-                label: 'Money Spent',
-                data: [10, 25, 40, 67, 88, 100, 35]
-            }]
-        },
-        options: {
-            title: {
-                display: true,
-                text: 'Monthly Budget Breakdown'
-            }
-        }
-    });
-</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
