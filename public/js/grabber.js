@@ -23,7 +23,7 @@ $(document).ready(function () {
             }
             insertData({
                 amount_spent: spentVal,
-                category: category,
+                category: category.val().trim(),
                 description: description,
                 UserId: userData.id,
             });

@@ -34,8 +34,11 @@ module.exports = function(app) {
       },
       include: [db.User]
     }).then(function(dbBudget){
-      console.log(dbBudget);
       res.render('index', {dbBudget: dbBudget});
+      console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+      console.log(dbBudget);
+      console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+      for (var i = 0; i<dbBudget.length; i++) 
     });
   });
 
