@@ -28,6 +28,7 @@ $(document).ready(function () {
                 UserId: userData.id,
             });
         }).then(function () {
+            console.log('hi');
             location.reload();
         });
     }
