@@ -26,6 +26,8 @@ module.exports = function (app) {
     }
   });
 
+  
+
   app.post("/api/budget", function (req, res) {
     console.log(res)
     console.log(req.body)
