@@ -70,18 +70,18 @@ $("#submit1").on("click", function (event) {
   };
 
   $.post("/api/goals", goal)
-
-    .then(function (data) {
-      console.log(data);
-
-      alert("adding goal")
-
-      $("#goal").val(""),
-        $("#amount").val("")
-      $("#wishList").text(`${data.goalName}`)
-      $("#cost").text(`${data.total}$`)
-    });
-
+  
+  .then(function(data){
+    console.log(data);
+    
+    alert("adding goal")
+    
+    $("#goal").val(""),
+    $("#amount").val("")
+    $("#wishList").text(`${data.goalName}`)
+    $("#cost").text(`$${data.total}`)
+  });
+  
   event.preventDefault();
 
 

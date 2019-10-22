@@ -34,6 +34,11 @@ module.exports = function(app) {
 
 
   app.post("/api/goals", function(req, res){
+    db.Goal.create({
+      goal: req.body.goal,
+      total: req.body.total
+    })
+    
     var goal = req.body;
     
     res.json(goal);
