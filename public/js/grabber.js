@@ -23,7 +23,7 @@ $(document).ready(function () {
             }
             insertData({
                 amount_spent: spentVal,
-                category: category.val().trim(),
+                category: category,
                 description: description,
                 UserId: userData.id,
             });
@@ -41,23 +41,24 @@ $(document).ready(function () {
         $.get('/api/budget', function (res) {
             // console.log(res);
             spentInput.val("");
-            category.val("");
         });
     };
 
     // $(".deletebutton").on("click", function(event) {
     $(document).on("click", ".deletebutton", function () {
-        console.log("you clicked me");
+        // console.log("you clicked me");
         var id = $(this).data("id");
+        console.log(id)
         // // Send the DELETE request.
         $.ajax({
             method: "DELETE",
             url: "/api/budget/" + id 
-        }).then(grabBudget) 
+        }).then(function(data){
+            location.reload();          
+        }) 
         // // Reload the page to get the updated list
-        // location.reload();          
     });
-}); // end document ready
+});     // end document ready
 
 
 

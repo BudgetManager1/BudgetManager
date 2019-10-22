@@ -36,7 +36,7 @@ module.exports = function (app) {
 
   app.delete("/api/budget/:id", function(req, res) {
     console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    console.log(req.dataValues);
+    console.log(req);
     console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     db.Budget.destroy({
       where: {
