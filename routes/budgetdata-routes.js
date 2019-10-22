@@ -31,5 +31,4 @@ module.exports = function (app) {
     // console.log(req.body)
     db.Budget.create(req.body);
   });
-
 }; // ends module.exports
