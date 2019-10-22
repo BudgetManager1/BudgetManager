@@ -72,23 +72,17 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        {{!-- Category: {{this.category}}<br>
-Amount: {{this.amount_spent}}<br>
-Personal Id: {{this.UserId}}<br> --}}
                                         <th>Description</th>
                                         <th>Amount Spent</th>
                                         <th>Edit Transaction</th>
                                         <th>Delete</th>
                                         {{#each dbBudget}}
                                     <tr>
+                                        <td>{{description}}</td>
+                                        <td>{{amount_spent}}</td>
+                                        <td>Edit this!</td>
                                         <td>
-                                            {{description}}
-                                        </td>
-                                        <td>
-                                            {{amount_spent}}
-                                        </td>
-                                        <td>
-                                            Edit this!
+                                            <button class="deletebutton">Delete transaction.</button>
                                         </td>
                                     </tr>
                                     {{/each}}
@@ -176,3 +170,4 @@ Personal Id: {{this.UserId}}<br> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script type="text/javascript" src="js/members.js"></script>
 <script type="text/javascript" src="js/grabber.js"></script>
+{{!-- <script type="text/javascript" src="js/delete.js"></script> --}}
