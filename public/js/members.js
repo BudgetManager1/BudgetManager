@@ -59,3 +59,9 @@ $(document).ready(function () {
     }
   }
 });
+
+
+function wishList(){
+  var goal = document.getElementById("#goal").value;
+  document.getElementById("#wishList").innerHTML = goal;
+}
