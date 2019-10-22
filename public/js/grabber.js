@@ -48,17 +48,14 @@ $(document).ready(function () {
     // $(".deletebutton").on("click", function(event) {
     $(document).on("click", ".deletebutton", function () {
         console.log("you clicked me");
-        // var id = $(this).data("id");
-        // Send the DELETE request.
-        // $.ajax("/api/user_data/" + id, {
-        //   type: "DELETE"
-        // }).then(
-        //   function() {
-        // console.log("deleted your transaction", id);
-        // Reload the page to get the updated list
-        // location.reload();
-        //   }
-        // );
+        var id = $(this).data("id");
+        // // Send the DELETE request.
+        $.ajax({
+            method: "DELETE",
+            url: "/api/budget/" + id 
+        }).then(grabBudget) 
+        // // Reload the page to get the updated list
+        // location.reload();          
     });
 }); // end document ready
 

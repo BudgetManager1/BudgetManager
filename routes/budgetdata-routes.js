@@ -32,5 +32,18 @@ module.exports = function (app) {
     db.Budget.create(req.body);
   });
 
+  app.delete("/api/budget/:id", function(req, res) {
+    console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    console.log(req.dataValues);
+    console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    db.Budget.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbBudget) {
+      res.json(dbBudget);
+    });
+  });
+
   
 }; // ends module.exports
