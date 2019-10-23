@@ -5,7 +5,7 @@ form.login {
 }
 
 a{
-  color: #660066;
+  color: blanchedalmond;
   font-size: 18px;
 }
 
@@ -21,12 +21,21 @@ body{
   background-color: #607d8b;
 } 
 
+.nav-container{
+  background-color: #607d8b;
+  height: 75px;
+}
+
+.card{
+  opacity: 0.7;
+}
+
 .card-stacked{
   background-color: #607d8b
 }
-.container-head{
+/* .container-head{
   background-color: blanchedalmond;
-}
+} */
 .card-content{
   background-color: #4db6ac;
 }
