@@ -19,7 +19,6 @@
   "homepage": "https://github.com/BudgetManager1/BudgetManager#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "chart.js": "^2.8.0",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "express-session": "^1.17.0",
