@@ -42,7 +42,6 @@ module.exports = function(app) {
   })
 
   app.post("/api/goals", function(req, res){
-
    var wish = req.body.goalName;
    var total = req.body.total;
 
@@ -52,8 +51,8 @@ module.exports = function(app) {
       total
     })
     var goal = req.body
-    
     res.json(goal);
+    res.redirect("/members");                     // Reload the page to get the updated list
   })
 
   // Route for getting some data about our user to be used client side
