@@ -53,22 +53,24 @@ $(document).ready(function () {
     };
     $.post("/api/goals", goal)
       .then(function (data) {
-        alert("adding goal")
         $("#goal").val(""),
-          $("#amount").val("")
-        grabGoals()
+          $("#amount").val(""),
+          grabGoals()
       });
   })
 
   function grabGoals() {
     $.get("/api/goals").then(function (data) {
-      console.log("this is goal data")
-      console.log(data)
+      // console.log("this is goal data")
+      // console.log(data)
       $("#wishList").text(`${data[0].wish}`)
       $("#cost").text(`$${data[0].total}`)
-    });
+    }).then(function(){
+      console.log("testsdf")
+      location.reload();
+    })
   }
-  grabGoals();
+  // grabGoals();
 
   $("#click").on("click", function move() {
     var elem = document.getElementById("myBar");
