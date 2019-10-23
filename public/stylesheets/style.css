@@ -1,6 +1,17 @@
 form.signup,
 form.login {
   margin-top: 50px;
+  color: #333;
+}
+
+a{
+  color: #660066;
+  font-size: 18px;
+}
+
+a:hover{
+  color: #111;
+  text-decoration: none;
 }
 
 body{
