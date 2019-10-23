@@ -22,6 +22,7 @@
     <br>
     <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Input your transaction here!</a>
     <div id="modal1" class="modal">
+        <div class="container">
         <form class="col s12" id='user-spending'>
             <div class="row">
                 {{!-- can we make this smaller and centered? --}}
@@ -56,7 +57,7 @@
                 <i class="material-icons right">send</i>
             </button>
         </form>
-
+        </div>
     </div>
 </div>
 <br>
@@ -78,7 +79,37 @@
                                     <tr>
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
-                                        <td>Edit this!</td>
+                                        <td>
+                                            {{!-- This creates a bottom modal, we can also use other modals. --}}
+                                            <!-- Modal Trigger -->
+                                            <button
+                                                class="updateButton waves-effect waves-light modal-trigger center-align"
+                                                data-id="{{this.id}}" href="#modal3">Edit This!</button>
+                                            {{!-- Modal --}}
+                                            <div id="modal3" class="modal bottom-sheet">
+                                                <div class="modal-content">
+                                                    <div class="container">
+                                                        <h4>Edit Transaction</h4>
+                                                        <div class="row">
+                                                            <div class="col s6">
+                                                                <label for="spent">Updated $$$ Spent</label>
+                                                                <input class="updateSpent" type="number"
+                                                                    class="validate">
+                                                            </div>
+                                                            <div class="col s6">
+                                                                <label for="spent">Updated Description</label>
+                                                                <input id="updateDescription" type="number"
+                                                                    class="validate">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <a href="#!"
+                                                            class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
                                                 transaction!</button>
@@ -105,7 +136,37 @@
                                     <tr>
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
-                                        <td>Edit this!</td>
+                                        <td>
+                                            {{!-- This creates a bottom modal, we can also use other modals. --}}
+                                            <!-- Modal Trigger -->
+                                            <button
+                                                class="updateButton waves-effect waves-light modal-trigger center-align"
+                                                data-id="{{this.id}}" href="#modal3">Edit This!</button>
+                                            {{!-- Modal --}}
+                                            <div id="modal3" class="modal bottom-sheet">
+                                                <div class="modal-content">
+                                                    <div class="container">
+                                                        <h4>Edit Transaction</h4>
+                                                        <div class="row">
+                                                            <div class="col s6">
+                                                                <label for="spent">Updated $$$ Spent</label>
+                                                                <input class="updateSpent" type="number"
+                                                                    class="validate">
+                                                            </div>
+                                                            <div class="col s6">
+                                                                <label for="spent">Updated Description</label>
+                                                                <input id="updateDescription" type="number"
+                                                                    class="validate">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <a href="#!"
+                                                            class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
                                                 transaction!</button>
@@ -132,7 +193,37 @@
                                     <tr>
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
-                                        <td>Edit this!</td>
+                                        <td>
+                                            {{!-- This creates a bottom modal, we can also use other modals. --}}
+                                            <!-- Modal Trigger -->
+                                            <button
+                                                class="updateButton waves-effect waves-light modal-trigger center-align"
+                                                data-id="{{this.id}}" href="#modal3">Edit This!</button>
+                                            {{!-- Modal --}}
+                                            <div id="modal3" class="modal bottom-sheet">
+                                                <div class="modal-content">
+                                                    <div class="container">
+                                                        <h4>Edit Transaction</h4>
+                                                        <div class="row">
+                                                            <div class="col s6">
+                                                                <label for="spent">Updated $$$ Spent</label>
+                                                                <input class="updateSpent" type="number"
+                                                                    class="validate">
+                                                            </div>
+                                                            <div class="col s6">
+                                                                <label for="spent">Updated Description</label>
+                                                                <input id="updateDescription" type="number"
+                                                                    class="validate">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <a href="#!"
+                                                            class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
                                                 transaction!</button>
@@ -159,7 +250,37 @@
                                     <tr>
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
-                                        <td>Edit this!</td>
+                                        <td>
+                                            {{!-- This creates a bottom modal, we can also use other modals. --}}
+                                            <!-- Modal Trigger -->
+                                            <button
+                                                class="updateButton waves-effect waves-light modal-trigger center-align"
+                                                data-id="{{this.id}}" href="#modal3">Edit This!</button>
+                                            {{!-- Modal --}}
+                                            <div id="modal3" class="modal bottom-sheet">
+                                                <div class="modal-content">
+                                                    <div class="container">
+                                                        <h4>Edit Transaction</h4>
+                                                        <div class="row">
+                                                            <div class="col s6">
+                                                                <label for="spent">Updated $$$ Spent</label>
+                                                                <input class="updateSpent" type="number"
+                                                                    class="validate">
+                                                            </div>
+                                                            <div class="col s6">
+                                                                <label for="spent">Updated Description</label>
+                                                                <input id="updateDescription" type="number"
+                                                                    class="validate">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <a href="#!"
+                                                            class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
                                                 transaction!</button>
@@ -187,7 +308,37 @@
                                     <tr>
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
-                                        <td>Edit this!</td>
+                                        <td>
+                                            {{!-- This creates a bottom modal, we can also use other modals. --}}
+                                            <!-- Modal Trigger -->
+                                            <button
+                                                class="updateButton waves-effect waves-light modal-trigger center-align"
+                                                data-id="{{this.id}}" href="#modal3">Edit This!</button>
+                                            {{!-- Modal --}}
+                                            <div id="modal3" class="modal bottom-sheet">
+                                                <div class="modal-content">
+                                                    <div class="container">
+                                                        <h4>Edit Transaction</h4>
+                                                        <div class="row">
+                                                            <div class="col s6">
+                                                                <label for="spent">Updated $$$ Spent</label>
+                                                                <input class="updateSpent" type="number"
+                                                                    class="validate">
+                                                            </div>
+                                                            <div class="col s6">
+                                                                <label for="spent">Updated Description</label>
+                                                                <input id="updateDescription" type="number"
+                                                                    class="validate">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <a href="#!"
+                                                            class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
                                                 transaction!</button>
@@ -215,7 +366,37 @@
                                     <tr>
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
-                                        <td>Edit this!</td>
+                                        <td>
+                                            {{!-- This creates a bottom modal, we can also use other modals. --}}
+                                            <!-- Modal Trigger -->
+                                            <button
+                                                class="updateButton waves-effect waves-light modal-trigger center-align"
+                                                data-id="{{this.id}}" href="#modal3">Edit This!</button>
+                                            {{!-- Modal --}}
+                                            <div id="modal3" class="modal bottom-sheet">
+                                                <div class="modal-content">
+                                                    <div class="container">
+                                                        <h4>Edit Transaction</h4>
+                                                        <div class="row">
+                                                            <div class="col s6">
+                                                                <label for="spent">Updated $$$ Spent</label>
+                                                                <input class="updateSpent" type="number"
+                                                                    class="validate">
+                                                            </div>
+                                                            <div class="col s6">
+                                                                <label for="spent">Updated Description</label>
+                                                                <input id="updateDescription" type="number"
+                                                                    class="validate">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <a href="#!"
+                                                            class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
                                                 transaction!</button>
@@ -243,7 +424,37 @@
                                     <tr>
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
-                                        <td>Edit this!</td>
+                                        <td>
+                                            {{!-- This creates a bottom modal, we can also use other modals. --}}
+                                            <!-- Modal Trigger -->
+                                            <button
+                                                class="updateButton waves-effect waves-light modal-trigger center-align"
+                                                data-id="{{this.id}}" href="#modal3">Edit This!</button>
+                                            {{!-- Modal --}}
+                                            <div id="modal3" class="modal bottom-sheet">
+                                                <div class="modal-content">
+                                                    <div class="container">
+                                                        <h4>Edit Transaction</h4>
+                                                        <div class="row">
+                                                            <div class="col s6">
+                                                                <label for="spent">Updated $$$ Spent</label>
+                                                                <input class="updateSpent" type="number"
+                                                                    class="validate">
+                                                            </div>
+                                                            <div class="col s6">
+                                                                <label for="spent">Updated Description</label>
+                                                                <input id="updateDescription" type="number"
+                                                                    class="validate">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <a href="#!"
+                                                            class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
                                                 transaction!</button>
@@ -272,11 +483,10 @@
                                         <td>{{amount_spent}}</td>
                                         <td>
                                             {{!-- This creates a bottom modal, we can also use other modals. --}}
-
                                             <!-- Modal Trigger -->
-                                            <button class="updateButton waves-effect waves-light modal-trigger center-align  data-update="{{this.id}}""
-                                                href="#modal3">Edit This!</button>
-
+                                            <button
+                                                class="updateButton waves-effect waves-light modal-trigger center-align"
+                                                data-id="{{this.id}}" href="#modal3">Edit This!</button>
                                             {{!-- Modal --}}
                                             <div id="modal3" class="modal bottom-sheet">
                                                 <div class="modal-content">
@@ -285,11 +495,13 @@
                                                         <div class="row">
                                                             <div class="col s6">
                                                                 <label for="spent">Updated $$$ Spent</label>
-                                                                <input id="updateSpent" type="number" class="validate">
+                                                                <input class="updateSpent" type="number"
+                                                                    class="validate">
                                                             </div>
                                                             <div class="col s6">
                                                                 <label for="spent">Updated Description</label>
-                                                                <input id="updateDescription" type="number" class="validate">
+                                                                <input id="updateDescription" type="number"
+                                                                    class="validate">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -312,7 +524,6 @@
                             </table>
                         </span></div>
                 </li>
-
             </ul>
         </div>
         <div class="col s4">

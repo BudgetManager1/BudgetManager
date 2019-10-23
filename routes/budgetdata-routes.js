@@ -40,5 +40,16 @@ module.exports = function (app) {
     });
   });
 
-  
+  app.put("/api/budget/", function (req,res){
+    db.Budget.update(
+      req.body,
+      {
+        where:{
+          id:req.body.id
+        }
+      }).then(function(dbBudget) {
+        res.json(dbBudget);
+      })
+  })
+
 }; // ends module.exports

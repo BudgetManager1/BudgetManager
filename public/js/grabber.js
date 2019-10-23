@@ -56,9 +56,15 @@ $(document).ready(function () {
         })
     });
 
-    $(document).on("click", ".updateButton", function () {   
+    $(document).on("click", ".updateButton", function () {  
         var id = $(this).data("id");
         console.log(id)
+        $.ajax({
+            method: "PUT",
+            url: "api/budget"
+        }).then(function(){
+            // location.reload();
+        })
     });
 
 });     // end document ready
