@@ -63,7 +63,8 @@ $(document).ready(function () {
 
 
 $("#submit1").on("click", function (event) {
-
+  event.preventDefault();
+  
   var goal = {
     goalName: $("#goal").val().trim(),
     total: $("#amount").val().trim()
@@ -82,7 +83,6 @@ $("#submit1").on("click", function (event) {
     $("#cost").text(`$${data.total}`)
   });
   
-  event.preventDefault();
 
 
 })
