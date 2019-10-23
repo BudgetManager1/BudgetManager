@@ -28,7 +28,6 @@ $(document).ready(function () {
                 UserId: userData.id,
             });
         }).then(function () {
-            console.log('hi');
             location.reload();
         });
     }
@@ -56,4 +55,10 @@ $(document).ready(function () {
             location.reload();                      // Reload the page to get the updated list
         })
     });
+
+    $(document).on("click", ".updateButton", function () {   
+        var id = $(this).data("id");
+        console.log(id)
+    });
+
 });     // end document ready

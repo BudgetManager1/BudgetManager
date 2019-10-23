@@ -80,7 +80,8 @@
                                         <td>{{amount_spent}}</td>
                                         <td>Edit this!</td>
                                         <td>
-                                            <button class="deletebutton" data-id="{{this.id}}">Delete transaction.</button>
+                                            <button class="deletebutton" data-id="{{this.id}}">Delete
+                                                transaction!</button>
                                             <span id="food-{{id}}" data-test="{{amount_spent}}"></span>
                                         </td>
                                     </tr>
@@ -106,7 +107,8 @@
                                         <td>{{amount_spent}}</td>
                                         <td>Edit this!</td>
                                         <td>
-                                            <button class="deletebutton" data-id="{{this.id}}">Delete transaction.</button>
+                                            <button class="deletebutton" data-id="{{this.id}}">Delete
+                                                transaction!</button>
                                             <span id="travel-{{id}}" data-test="{{amount_spent}}"></span>
                                         </td>
                                     </tr>
@@ -132,7 +134,8 @@
                                         <td>{{amount_spent}}</td>
                                         <td>Edit this!</td>
                                         <td>
-                                            <button class="deletebutton" data-id="{{this.id}}">Delete transaction.</button>
+                                            <button class="deletebutton" data-id="{{this.id}}">Delete
+                                                transaction!</button>
                                             <span id="clothing-{{id}}" data-test="{{amount_spent}}"></span>
                                         </td>
                                     </tr>
@@ -158,7 +161,8 @@
                                         <td>{{amount_spent}}</td>
                                         <td>Edit this!</td>
                                         <td>
-                                            <button class="deletebutton" data-id="{{this.id}}">Delete transaction.</button>
+                                            <button class="deletebutton" data-id="{{this.id}}">Delete
+                                                transaction!</button>
                                             <span id="entertainment-{{id}}" data-test="{{amount_spent}}"></span>
                                         </td>
                                     </tr>
@@ -185,7 +189,8 @@
                                         <td>{{amount_spent}}</td>
                                         <td>Edit this!</td>
                                         <td>
-                                            <button class="deletebutton" data-id="{{this.id}}">Delete transaction.</button>
+                                            <button class="deletebutton" data-id="{{this.id}}">Delete
+                                                transaction!</button>
                                             <span id="utilities-{{id}}" data-test="{{amount_spent}}"></span>
                                         </td>
                                     </tr>
@@ -212,7 +217,8 @@
                                         <td>{{amount_spent}}</td>
                                         <td>Edit this!</td>
                                         <td>
-                                            <button class="deletebutton" data-id="{{this.id}}">Delete transaction.</button>
+                                            <button class="deletebutton" data-id="{{this.id}}">Delete
+                                                transaction!</button>
                                             <span id="housing-{{id}}" data-test="{{amount_spent}}"></span>
                                         </td>
                                     </tr>
@@ -239,7 +245,8 @@
                                         <td>{{amount_spent}}</td>
                                         <td>Edit this!</td>
                                         <td>
-                                            <button class="deletebutton" data-id="{{this.id}}">Delete transaction.</button>
+                                            <button class="deletebutton" data-id="{{this.id}}">Delete
+                                                transaction!</button>
                                             <span id="medical-{{id}}" data-test="{{amount_spent}}"></span>
                                         </td>
                                     </tr>
@@ -263,9 +270,39 @@
                                     <tr>
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
-                                        <td>Edit this!</td>
                                         <td>
-                                            <button class="deletebutton" data-id="{{this.id}}">Delete transaction.</button>
+                                            {{!-- This creates a bottom modal, we can also use other modals. --}}
+
+                                            <!-- Modal Trigger -->
+                                            <button class="updateButton waves-effect waves-light modal-trigger center-align  data-update="{{this.id}}""
+                                                href="#modal3">Edit This!</button>
+
+                                            {{!-- Modal --}}
+                                            <div id="modal3" class="modal bottom-sheet">
+                                                <div class="modal-content">
+                                                    <div class="container">
+                                                        <h4>Edit Transaction</h4>
+                                                        <div class="row">
+                                                            <div class="col s6">
+                                                                <label for="spent">Updated $$$ Spent</label>
+                                                                <input id="updateSpent" type="number" class="validate">
+                                                            </div>
+                                                            <div class="col s6">
+                                                                <label for="spent">Updated Description</label>
+                                                                <input id="updateDescription" type="number" class="validate">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <a href="#!"
+                                                            class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button class="deletebutton" data-id="{{this.id}}">Delete
+                                                transaction!</button>
                                             <span id="personal-{{id}}" data-test="{{amount_spent}}"></span>
                                         </td>
                                     </tr>
@@ -320,6 +357,7 @@
         </div>
     </div>
 </div>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
