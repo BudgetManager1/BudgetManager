@@ -20,7 +20,7 @@
           <div class="card-content">
             <p>Total: <i class="small material-icons">attach_money</i></p> -->
     <br>
-    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Input your transaction here!</a>
+    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add Expense</a>
     <div id="modal1" class="modal">
         <div class="container">
             <form class="col s12" id='user-spending'>
@@ -167,7 +167,7 @@
                                         <th>Amount Spent</th>
                                         <th>Edit Transaction</th>
                                         <th>Delete</th>
-                                        {{#each dbBudget.Travel}}
+                                        {{#each dbBudget.Entertainment}}
                                     <tr>
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
