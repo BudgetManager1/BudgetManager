@@ -54,11 +54,13 @@ $(document).ready(function () {
     };
     $.post("/api/goals", goal)
       .then(function (data) {
-        $("#goal").val(""),
-          $("#amount").val(""),
-          grabGoals()
+        // alert("adding goal")
+        $("#goal").val("");
+        $("#amount").val("");
+        grabGoals();
+        $('.modal.open').modal('close');
       });
-  })
+  });
 
   function grabGoals() {
     $.get("/api/goals").then(function (data) {
@@ -66,10 +68,7 @@ $(document).ready(function () {
       // console.log(data)
       $("#wishList").text(`${data[0].wish}`)
       $("#cost").text(`$${data[0].total}`)
-    }).then(function(){
-      console.log("testsdf")
-      // location.reload();
-    })
+    });
   }
   grabGoals();
 });
