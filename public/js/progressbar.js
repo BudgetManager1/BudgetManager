@@ -34,5 +34,5 @@ new Chart(document.getElementById("progress-bar").getContext('2d'), {
                 }
             }]
         }
-    };
+    }
 });
