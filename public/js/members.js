@@ -37,16 +37,17 @@ $(document).ready(function () {
     var instances = M.FormSelect.init(elems, options);
   });
 
+  // edit transaction modal
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal3');
     var instances = M.Modal.init(elems, options);
   });
-
-  $('.modal').modal();
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.Modal.init(elems, options);
-  });
+  $('.modal3').modal();
+  
+  // document.addEventListener('DOMContentLoaded', function() {
+  //   var elems = document.querySelectorAll('select');
+  //   var instances = M.Modal.init(elems, options);
+  // });
 
   $('select').formSelect();
 
