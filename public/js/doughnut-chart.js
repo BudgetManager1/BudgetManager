@@ -1,5 +1,5 @@
-var budgetData = [0, 0, 0, 0, 0, 0, 0];
-var budgetArr = ['food', 'travel', 'clothing', 'entertainment', 'utilities', 'housing', 'medical'];
+var budgetData = [0, 0, 0, 0, 0, 0, 0, 0];
+var budgetArr = ['food', 'travel', 'clothing', 'entertainment', 'utilities', 'housing', 'medical', 'personal'];
 for (var i = 0; i < budgetData.length; i++) {
     $(`span[data-category='${budgetArr[i]}']`).each(function () {
         budgetData[i] += +$(this).data('amount');
@@ -9,10 +9,10 @@ for (var i = 0; i < budgetData.length; i++) {
 new Chart(document.getElementById("doughnut-chart").getContext('2d'), {
     type: 'doughnut',
     data: {
-        labels: ['Food', 'Travel', 'Clothing', 'Entertainment', 'Utilities', 'Housing', 'Medical'],
+        labels: ['Food', 'Travel', 'Clothing', 'Entertainment', 'Utilities', 'Housing', 'Medical', 'Personal'],
         datasets: [{
             label: 'Money Spent',
-            backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850", "#ff9900", "cc0066"],
+            backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850", "#ff9900", "cc0066", "#006666"],
             data: budgetData
         }]
     },
