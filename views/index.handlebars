@@ -86,7 +86,7 @@
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
                                                 transaction!</button>
-                                            <span id="food-{{id}}" data-test="{{amount_spent}}"></span>
+                                            <span data-category="food" data-amount="{{amount_spent}}"></span>
                                         </td>
                                     </tr>
                                     {{/each}}
@@ -117,7 +117,7 @@
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
                                                 transaction!</button>
-                                            <span id="travel-{{id}}" data-test="{{amount_spent}}"></span>
+                                            <span data-category="travel" data-amount="{{amount_spent}}"></span>
                                         </td>
                                     </tr>
                                     {{/each}}
@@ -148,7 +148,8 @@
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
                                                 transaction!</button>
-                                            <span id="clothing-{{id}}" data-test="{{amount_spent}}"></span>
+                                            <span data-category="clothing" data-amount="{{amount_spent}}"></span>
+
                                         </td>
                                     </tr>
                                     {{/each}}
@@ -179,7 +180,8 @@
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
                                                 transaction!</button>
-                                            <span id="entertainment-{{id}}" data-test="{{amount_spent}}"></span>
+                                            <span data-category="entertainment" data-amount="{{amount_spent}}"></span>
+
                                         </td>
                                     </tr>
                                     {{/each}}
@@ -211,7 +213,8 @@
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
                                                 transaction!</button>
-                                            <span id="utilities-{{id}}" data-test="{{amount_spent}}"></span>
+                                            <span data-category="utilities" data-amount="{{amount_spent}}"></span>
+
                                         </td>
                                     </tr>
                                     {{/each}}
@@ -241,9 +244,10 @@
                                                 data-id="{{this.id}}" href="#modal3" id="{{id}}">Edit This!</button>
                                         </td>
                                         <td>
-                                        <button class="deletebutton" data-id="{{this.id}}">Delete
-                                            transaction!</button>
-                                        <span id="housing-{{id}}" data-test="{{amount_spent}}"></span>
+                                            <button class="deletebutton" data-id="{{this.id}}">Delete
+                                                transaction!</button>
+                                            <span data-category="housing" data-amount="{{amount_spent}}"></span>
+
                                         </td>
                                     </tr>
                                     {{/each}}
@@ -275,7 +279,7 @@
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
                                                 transaction!</button>
-                                            <span id="medical-{{id}}" data-test="{{amount_spent}}"></span>
+                                            <span data-category="medical" data-amount="{{amount_spent}}"></span>
                                         </td>
                                     </tr>
                                     {{/each}}
@@ -306,7 +310,7 @@
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
                                                 transaction!</button>
-                                            <span id="personal-{{id}}" data-test="{{amount_spent}}"></span>
+                                            <span data-category="personal" data-amount="{{amount_spent}}"></span>
                                         </td>
                                     </tr>
                                     {{/each}}
@@ -367,21 +371,25 @@
     <div id="modal3" class="modal bottom-sheet">
         <div class="modal-content">
             <div class="container">
-                <h4>Edit Transaction</h4>
-                <div class="row">
-                    <div class="col s6">
-                        <label for="spent">Updated $$$ Spent</label>
-                        <input class="updateSpent" type="number" class="validate">
+                <form class="userEdit">
+                    <h4>Edit Transaction</h4>
+                    <div class="row">
+                        <div class="col s6">
+                            <label for="spent">Updated $$$ Spent</label>
+                            <input id="updateSpent" type="number" class="validate">
+                        </div>
+                        <div class="col s6">
+                            <label for="update">Updated Description</label>
+                            <input id="updateDescription" type="text" class="validate">
+                        </div>
                     </div>
-                    <div class="col s6">
-                        <label for="spent">Updated Description</label>
-                        <input id="updateDescription" type="number" class="validate">
-                    </div>
-                </div>
             </div>
             <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                <button class="btn waves-effect waves-light" type="submit" id="userEdit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
             </div>
+            </form>
         </div>
     </div>
 </div>

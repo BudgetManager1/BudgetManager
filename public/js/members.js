@@ -36,7 +36,6 @@ $(document).ready(function () {
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems, options);
   });
-
   // edit transaction modal
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal3');

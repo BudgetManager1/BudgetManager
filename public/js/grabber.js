@@ -4,6 +4,8 @@ $(document).ready(function () {
     var spentInput = $("#spent");
     var category = $("#category");
     var regEx = /^[0-9]+([.,][0-9]{2})?$/g;
+    var updateDesc = $("#updateDescription");
+    var updateSpent = $("#updateSpent");
 
     $(document).on("submit", "#user-spending", grabUserSubmit);
 
@@ -39,7 +41,6 @@ $(document).ready(function () {
 
     function grabBudget() {
         return $.get('/api/budget', function (res) {
-            // console.log(res);
             spentInput.val("");
         });
     };
@@ -56,15 +57,34 @@ $(document).ready(function () {
         })
     });
 
-    $(document).on("click", ".updateButton", function () {  
-        var id = $(this).data("id");
-        console.log(id)
+    $(document).on('click', '.updateButton', function() {
+        // console.log($(this).attr('data-id'));
+        var passId = $(this).attr('data-id')
+        $(".userEdit").attr('data-id', passId)
+        
+        // $('.userEdit').attr("data-id", $(this))
+    })
+
+    $(document).on("submit", ".userEdit", function (data) {
+        event.preventDefault();
+        var updateDescInput = updateDesc.val().trim()
+        var updateSpentInput = updateSpent.val().trim();
+        // console.log(this)
+        var editID = $(this).attr('data-id');
+        // console.log(id);
         $.ajax({
             method: "PUT",
-            url: "api/budget"
+            url: "api/budget",
+            data: {
+                description: updateDescInput,
+                amount_spent: updateSpentInput,
+                id: editID,
+            }
         }).then(function(){
-            // location.reload();
+            // console.log(data)
+            location.reload();
         })
     });
+
 
 });     // end document ready
