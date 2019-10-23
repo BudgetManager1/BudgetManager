@@ -32,15 +32,18 @@ module.exports = function(app) {
     res.redirect("/");
   });
 
+  app.get("/api/goals", function(req, res){
+    db.Goals.findAll({
+      limit:1, 
+      order: [ [ 'createdAt', 'DESC']]
+    }).then(function(goalData){
+      res.json(goalData)
+    })
+  })
 
   app.post("/api/goals", function(req, res){
     console.log(req.body);
-    /*
-    req.body === {
-      goalName: 'ps4',
-      total: '434'
-    }
-    */
+
    var wish = req.body.goalName;
    var total = req.body.total;
 
@@ -49,10 +52,6 @@ module.exports = function(app) {
       wish,
       total
     })
-    // db.Goal.create({
-    //   goal: req.body.goal,
-    //   total: req.body.total
-    // })
     var goal = req.body
     
     
