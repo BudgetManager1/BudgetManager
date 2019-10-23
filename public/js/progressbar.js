@@ -10,7 +10,10 @@ var progress = ['goal'];
 //     total += progressData[i];
 // }
 
-Chart.defaults.global.defaultFontColor = '#000000'
+$.get("/api/goals").then(function (data) {
+ console.log(data);
+ 
+ Chart.defaults.global.defaultFontColor = '#000000'
 
 new Chart(document.getElementById("progress-bar").getContext('2d'), {
     type: 'horizontalBar',
@@ -19,20 +22,12 @@ new Chart(document.getElementById("progress-bar").getContext('2d'), {
         datasets: [{
             label: "Here's your progress",
             backgroundColor: ["#3e95cd"],
-            data: [10]
+            data: [data[0].total]
         }]
     },
-    // options = {
-    //     scales: {
-    //         xAxes: [{
-    //             barPercentage: 0.5,
-    //             barThickness: 6,
-    //             maxBarThickness: 8,
-    //             minBarLength: 2,
-    //             gridLines: {
-    //                 offsetGridLines: true
-    //             }
-    //         }]
-    //     }
-    // }
+ 
 });
+ 
+  })
+//   console.log(totalAmount);
+  

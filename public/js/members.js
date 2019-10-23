@@ -71,34 +71,5 @@ $(document).ready(function () {
       // location.reload();
     })
   }
-  // grabGoals();
-
-  $("#click").on("click", function move() {
-    var elem = document.getElementById("myBar");
-    var width = 20;
-    var id = setInterval(frame, 100);
-    // Variables needed: total goal cost $$, amt entered $$, current progress amt %%%, 
-    // added progress amt%%%, new total percent progress %%
-
-    // Functions needed: grab amount entered, 
-    // divide that number by the goal number to get a percentage, 
-    // adds new and old percentages to get the new total, update bar width
-
-
-    // We need the amount they enter divided by the total goal amount = the percentage to be added to the progress bar
-    // We also need the current progress percentage to be given to the style width of the div
-    // We need to add the new percentage to the old percentage and reload the page
-
-    function frame() {
-      if (width >= 100) {
-        clearInterval(id);
-      } else {
-        width++;
-        elem.style.width = width + '%';
-        elem.innerHTML = width * 1 + '%';
-      }
-    }
-  });
-
-  // move();
+  grabGoals();
 });
