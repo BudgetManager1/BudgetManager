@@ -59,30 +59,59 @@ $(document).ready(function () {
       }
     }
   }
+  
+  
+  $("#submit1").on("click", function (event) {
+    event.preventDefault();
+    
+    var goal = {
+      goalName: $("#goal").val().trim(),
+      total: $("#amount").val().trim()
+    };
+    
+    $.post("/api/goals", goal)
+    
+    .then(function(data){
+      console.log(data);
+      
+      alert("adding goal")
+      
+      $("#goal").val(""),
+      $("#amount").val("")
+      grabGoals()
+      // $("#wishList").text(`${data.goalName}`)
+      // $("#cost").text(`$${data.total}`)
+    });
+  })
+  
+
+  function grabGoals(){
+    $.get("/api/goals").then(function (data) {
+      console.log("this is goal data")
+     console.log(data)
+     $("#wishList").text(`${data[0].wish}`)
+      $("#cost").text(`$${data[0].total}`)
+    });
+
+  }
+
+  grabGoals()
+  // $.get("/api/goals", function(req, res){
+  //   console.log(res);
+  //   $("#wishlist").text(`${data.goalName}`),
+  //   $("#cost").text(`$${data.total}`)
+  // });
+
+  
 });
 
 
-$("#submit1").on("click", function (event) {
-  event.preventDefault();
-  
-  var goal = {
-    goalName: $("#goal").val().trim(),
-    total: $("#amount").val().trim()
-  };
 
-  $.post("/api/goals", goal)
-  
-  .then(function(data){
-    console.log(data);
-    
-    alert("adding goal")
-    
-    $("#goal").val(""),
-    $("#amount").val("")
-    $("#wishList").text(`${data.goalName}`)
-    $("#cost").text(`$${data.total}`)
-  });
-  
+// app.get("/api/goals", function(req, res) {
+//   var dbQuery = "SELECT * FROM Goals";
 
-
-})
+//   connection.query(dbQuery, function(err, result) {
+//     if (err) throw err;
+//     res.json(result);
+//   });
+// });
