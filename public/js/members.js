@@ -83,6 +83,29 @@ $("#submit1").on("click", function (event) {
     $("#cost").text(`$${data.total}`)
   });
   
-
-
+  
 })
+
+
+router.get("/api/goals", function(req, res){
+console.log(res);
+$("#wishlist").text(`${data.goalName}`),
+$("#cost").text(`$${data.total}`)
+});
+
+
+
+
+
+
+
+
+
+// app.get("/api/goals", function(req, res) {
+//   var dbQuery = "SELECT * FROM Goals";
+
+//   connection.query(dbQuery, function(err, result) {
+//     if (err) throw err;
+//     res.json(result);
+//   });
+// });
