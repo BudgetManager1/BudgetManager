@@ -68,7 +68,7 @@ $(document).ready(function () {
       $("#cost").text(`$${data[0].total}`)
     }).then(function(){
       console.log("testsdf")
-      location.reload();
+      // location.reload();
     })
   }
   // grabGoals();

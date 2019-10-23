@@ -52,7 +52,6 @@ module.exports = function(app) {
     })
     var goal = req.body
     res.json(goal);
-    res.redirect("/members");                     // Reload the page to get the updated list
   })
 
   // Route for getting some data about our user to be used client side

@@ -19,20 +19,20 @@ new Chart(document.getElementById("progress-bar").getContext('2d'), {
         datasets: [{
             label: "Here's your progress",
             backgroundColor: ["#3e95cd"],
-            data: [20]
+            data: [10]
         }]
     },
-    options = {
-        scales: {
-            xAxes: [{
-                barPercentage: 0.5,
-                barThickness: 6,
-                maxBarThickness: 8,
-                minBarLength: 2,
-                gridLines: {
-                    offsetGridLines: true
-                }
-            }]
-        }
-    }
+    // options = {
+    //     scales: {
+    //         xAxes: [{
+    //             barPercentage: 0.5,
+    //             barThickness: 6,
+    //             maxBarThickness: 8,
+    //             minBarLength: 2,
+    //             gridLines: {
+    //                 offsetGridLines: true
+    //             }
+    //         }]
+    //     }
+    // }
 });
