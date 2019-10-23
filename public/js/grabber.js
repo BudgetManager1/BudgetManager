@@ -1,6 +1,4 @@
 $(document).ready(function () {
-    console.log("document ready")
-
     var spentInput = $("#spent");
     var category = $("#category");
     var regEx = /^[0-9]+([.,][0-9]{2})?$/g;
@@ -46,7 +44,6 @@ $(document).ready(function () {
 
     $(document).on("click", ".deletebutton", function () {
         var id = $(this).data("id");
-        console.log(id)
         // Send the DELETE request.
         $.ajax({
             method: "DELETE",
@@ -57,10 +54,8 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '.updateButton', function () {
-        // console.log($(this).attr('data-id'));
         var passId = $(this).attr('data-id')
         $(".userEdit").attr('data-id', passId)
-        // $('.userEdit').attr("data-id", $(this))
     })
 
     $(document).on("submit", ".userEdit", function (data) {
@@ -76,7 +71,7 @@ $(document).ready(function () {
                 amount_spent: updateSpentInput,
                 id: editID,
             }
-        }).then(function () {                     // console.log(data)
+        }).then(function () {
             location.reload();
         })
     });
