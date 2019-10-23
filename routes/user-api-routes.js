@@ -34,7 +34,27 @@ module.exports = function(app) {
 
 
   app.post("/api/goals", function(req, res){
-    var goal = req.body;
+    console.log(req.body);
+    /*
+    req.body === {
+      goalName: 'ps4',
+      total: '434'
+    }
+    */
+   var wish = req.body.goalName;
+   var total = req.body.total;
+
+    db.Goals.create({
+      UserId: req.user.id,
+      wish,
+      total
+    })
+    // db.Goal.create({
+    //   goal: req.body.goal,
+    //   total: req.body.total
+    // })
+    var goal = req.body
+    
     
     res.json(goal);
   })

@@ -27,7 +27,14 @@ module.exports = function (app) {
     }
   });
 
-  
+  // app.post("/api/goals", function (req, res){
+  //   db.Goal.create({
+  //     goal: req.body.goal,
+  //     total: req.body.total
+  //   })
+  //   // db.Goal.create(req.body);
+  //   // console.log(res);
+  // })
 
   app.post("/api/budget", function (req, res) {
     // console.log(res)
