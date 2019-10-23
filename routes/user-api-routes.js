@@ -42,7 +42,6 @@ module.exports = function(app) {
   })
 
   app.post("/api/goals", function(req, res){
-    console.log(req.body);
 
    var wish = req.body.goalName;
    var total = req.body.total;
@@ -53,7 +52,6 @@ module.exports = function(app) {
       total
     })
     var goal = req.body
-    
     
     res.json(goal);
   })

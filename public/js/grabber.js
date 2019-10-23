@@ -4,13 +4,14 @@ $(document).ready(function () {
     var spentInput = $("#spent");
     var category = $("#category");
     var regEx = /^[0-9]+([.,][0-9]{2})?$/g;
+    var updateDesc = $("#updateDescription");
+    var updateSpent = $("#updateSpent");
 
     $(document).on("submit", "#user-spending", grabUserSubmit);
 
     function grabUserSubmit(event) {
         event.preventDefault();
         $.get('/api/user_data', function (userData) {   // gets the current user data
-            // console.log(spentInput);
             var spentObj = spentInput.val().trim();     // console.log(spentTest);
             var spentArr = spentObj.match(regEx);       // console.log(spentVal);  // spentVal returns as an object 
             var spentVal = spentArr.join("");           // console.log(spentVal); converts back to string that only takes in integers and 2 decimal places
@@ -28,7 +29,6 @@ $(document).ready(function () {
                 UserId: userData.id,
             });
         }).then(function () {
-            console.log('hi');
             location.reload();
         });
     }
@@ -40,7 +40,6 @@ $(document).ready(function () {
 
     function grabBudget() {
         return $.get('/api/budget', function (res) {
-            // console.log(res);
             spentInput.val("");
         });
     };
@@ -56,4 +55,30 @@ $(document).ready(function () {
             location.reload();                      // Reload the page to get the updated list
         })
     });
+
+    $(document).on('click', '.updateButton', function () {
+        // console.log($(this).attr('data-id'));
+        var passId = $(this).attr('data-id')
+        $(".userEdit").attr('data-id', passId)
+        // $('.userEdit').attr("data-id", $(this))
+    })
+
+    $(document).on("submit", ".userEdit", function (data) {
+        event.preventDefault();
+        var updateDescInput = updateDesc.val().trim()
+        var updateSpentInput = updateSpent.val().trim();
+        var editID = $(this).attr('data-id');
+        $.ajax({
+            method: "PUT",
+            url: "api/budget",
+            data: {
+                description: updateDescInput,
+                amount_spent: updateSpentInput,
+                id: editID,
+            }
+        }).then(function () {                     // console.log(data)
+            location.reload();
+        })
+    });
+
 });     // end document ready

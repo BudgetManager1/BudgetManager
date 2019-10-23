@@ -36,53 +36,29 @@ $(document).ready(function () {
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems, options);
   });
+  // edit transaction modal
+  document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.modal3');
+    var instances = M.Modal.init(elems, options);
+  });
+  $('.modal3').modal();
 
   $('select').formSelect();
 
-  //progress for bar
-  // var i = 0;
-  // function move() {
-  //   if (i == 0) {
-  //     i = 1;
-  //     var elem = document.getElementById("myBar");
-  //     var width = 10;
-  //     var id = setInterval(frame, 10);
-  //     function frame() {
-  //       if (width >= 100) {
-  //         clearInterval(id);
-  //         i = 0;
-  //       } else {
-  //         width++;
-  //         elem.style.width = width + "%";
-  //         elem.innerHTML = width + "%";
-  //       }
-  //     }
-  //   }
-  // }
-
-
   $("#submit1").on("click", function (event) {
     event.preventDefault();
-
     var goal = {
       goalName: $("#goal").val().trim(),
       total: $("#amount").val().trim()
     };
-
     $.post("/api/goals", goal)
-
       .then(function (data) {
-        console.log(data);
-
         alert("adding goal")
-
         $("#goal").val(""),
           $("#amount").val("")
         grabGoals()
-        // move();
       });
   })
-
 
   function grabGoals() {
     $.get("/api/goals").then(function (data) {
@@ -90,10 +66,7 @@ $(document).ready(function () {
       console.log(data)
       $("#wishList").text(`${data[0].wish}`)
       $("#cost").text(`$${data[0].total}`)
-
-
     });
-
   }
   grabGoals();
 
