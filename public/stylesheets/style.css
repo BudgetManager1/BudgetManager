@@ -1,6 +1,17 @@
 form.signup,
 form.login {
   margin-top: 50px;
+  color: #333;
+}
+
+a{
+  color: blanchedalmond;
+  font-size: 18px;
+}
+
+a:hover{
+  color: #111;
+  text-decoration: none;
 }
 
 body{
@@ -10,12 +21,21 @@ body{
   background-color: #607d8b;
 } 
 
+.nav-container{
+  background-color: #607d8b;
+  height: 75px;
+}
+
+.card{
+  opacity: 0.7;
+}
+
 .card-stacked{
   background-color: #607d8b
 }
-.container-head{
+/* .container-head{
   background-color: blanchedalmond;
-}
+} */
 .card-content{
   background-color: #4db6ac;
 }
