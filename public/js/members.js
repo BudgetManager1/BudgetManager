@@ -1,3 +1,4 @@
+var moneyChange = 0;
 $(document).ready(function () {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
@@ -69,23 +70,5 @@ $(document).ready(function () {
       $("#cost").text(`$${data[0].total}`)
     });
   }
-
   grabGoals();
-
-  $("#click").on("click", function move() {
-    var elem = document.getElementById("myBar");
-    var width = 20;
-    var id = setInterval(frame, 100);
-    function frame() {
-      if (width >= 100) {
-        clearInterval(id);
-      } else {
-        width++;
-        elem.style.width = width + '%';
-        elem.innerHTML = width * 1 + '%';
-      }
-    }
-  });
-
-  move();
 });
