@@ -1,14 +1,5 @@
 var progressData = [0];
 var progress = ['goal'];
-// for (var i = 0; i < progressData.length; i++) {
-//     $(`span[data-category='${progress[i]}']`).each(function () {
-//         progressData[i] += +$(this).data('amount');
-//     });
-// }
-// var total = 0;
-// for(var i=0;i<progressData.length;i++){
-//     total += progressData[i];
-// }
 
 $.get("/api/goals").then(function (data) {
  console.log(data);
@@ -22,12 +13,17 @@ new Chart(document.getElementById("progress-bar").getContext('2d'), {
         datasets: [{
             label: "Here's your progress",
             backgroundColor: ["#3e95cd"],
-            data: [data[0].total]
-        }]
+            data: [data[0].progress],
+        }],
     },
+    options:{
+    scales: {xAxes: [{id: 'x-axis-1', type: 'linear', position: 'left', ticks: {min: 0, max:100}}]},
+
+    }
+    
  
 });
  
   })
-//   console.log(totalAmount);
+
   

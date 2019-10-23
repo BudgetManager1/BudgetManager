@@ -50,13 +50,15 @@ $(document).ready(function () {
     event.preventDefault();
     var goal = {
       goalName: $("#goal").val().trim(),
-      total: $("#amount").val().trim()
+      total: $("#amount").val().trim(),
+      addition: $("#addMoney").val().trim()
     };
     $.post("/api/goals", goal)
       .then(function (data) {
         // alert("adding goal")
         $("#goal").val("");
         $("#amount").val("");
+        $("#addMoney").val("");
         grabGoals();
         $('.modal.open').modal('close');
       });
@@ -71,4 +73,5 @@ $(document).ready(function () {
     });
   }
   grabGoals();
+
 });
