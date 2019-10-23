@@ -32,6 +32,14 @@ module.exports = function(app) {
     res.redirect("/");
   });
 
+  app.get("/api/goals", function(req, res){
+    db.Goals.findAll({
+      limit:1, 
+      order: [ [ 'createdAt', 'DESC']]
+    }).then(function(goalData){
+      res.json(goalData)
+    })
+  })
 
   app.post("/api/goals", function(req, res){
     console.log(req.body);
