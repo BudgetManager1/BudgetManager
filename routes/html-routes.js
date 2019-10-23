@@ -4,9 +4,9 @@ var db = require('../models');
 
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
-
+var budgetInfo = {};
 module.exports = function (app) {
-
+  var testdata;
   app.get("/", function (req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
@@ -44,47 +44,53 @@ module.exports = function (app) {
         for (var j = 0; j < categoryArr.length; j++)
           if (dbBudget[i].category == categoryArr[j]) {
             infoArr.push(dbBudget[i]);
-            console.log(infoArr)
+            // console.log(infoArr)
           }
       }
 
       budgetInfo = {
-        Travel: [
-        ],
-        Entertainment: [
-        ],
-        Food: [
-        ],
-        Clothing: [
-        ],
-        Housing: [
-        ],
-        Utilities: [
-        ],
-        Food: [
-        ],
-        Medical: [
-        ],
-        Personal: [
-        ],
+        Travel: [],
+        Entertainment: [],
+        Food: [],
+        Clothing: [],
+        Housing: [],
+        Utilities: [],
+        Food: [],
+        Medical: [],
+        Personal: [],
       }
 
       for (var i = 0; i < infoArr.length; i++) {
         budgetInfo[infoArr[i].category].push(
           {
+            id: infoArr[i].id,
             description: infoArr[i].description,
             amount_spent: infoArr[i].amount_spent,
-            createdAt: infoArr[i].createdAt,
+            createdAt: infoArr[i].createdAt
           }
         )
-      }                                                   // console.log(budgetInfo);
+      }
+      // console.log(budgetInfo);
+      testdata = test(budgetInfo)
       res.render('index', { dbBudget: budgetInfo });
 
     });
   });
 
+
+
+  app.get("/test", function (req, res) {
+    // console.log(testdata);
+    res.json()
+  });
+
+
   app.get("/budget", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
+  function test(info) {
+    // console.log(info);
+    return info;
+  }
 
 };
