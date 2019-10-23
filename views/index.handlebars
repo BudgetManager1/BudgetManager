@@ -9,27 +9,21 @@
 </nav>
 <div class="container-head">
     <div class="row">
-        <div class="col s12">
+        <div class="col s12 m12 l12">
             <h2 class="center-align grey-text text-lighten-1"><strong>Budget Tracker</strong></h2>
         </div>
     </div>
 </div>
 <div class="center-align">
-    <!-- Adding status bar here
-        <div class="card horizontal">
-        <div class="card-stacked">
-          <div class="card-content">
-            <p>Total: <i class="small material-icons">attach_money</i></p> -->
     <br>
     <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add Expense</a>
     <div id="modal1" class="modal">
-        <div class="container">
-            <form class="col s12" id='user-spending'>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="spent" type="number" class="validate">
-                        <label for="spent">Total $$$ Spent</label>
-                    </div>
+        <form class="col s12 m12 l12" id='user-spending'>
+            <div class="row">
+                {{!-- can we make this smaller and centered? --}}
+                <div class="input-field col s12">
+                    <input id="spent" type="number" class="validate">
+                    <label for="spent">Total $$$ Spent</label>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
@@ -63,7 +57,7 @@
 <br>
 <div class="container">
     <div class="row">
-        <div class="col s12 m7">
+        <div class="col s12 m12 l7">
             <ul class="collapsible collapsible-accordion blue-grey darken-3">
                 <li>
                     <div class="collapsible-header"><i class="material-icons">restaurant</i>Food</div>
@@ -322,7 +316,7 @@
                 </li>
             </ul>
         </div>
-        <div class="col s12 m5">
+        <div class="col s12 m12 l5">
             <canvas id="doughnut-chart" width="300" height="300"></canvas>
             <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Add your goal!</a>
             <div class="center-align">
@@ -399,8 +393,3 @@
 <script type="text/javascript" src="js/doughnut-chart.js"></script>
 <script type="text/javascript" src="js/members.js"></script>
 <script type="text/javascript" src="js/grabber.js"></script>
-
-
-
-
-
