@@ -12,7 +12,6 @@ $(document).ready(function () {
     function grabUserSubmit(event) {
         event.preventDefault();
         $.get('/api/user_data', function (userData) {   // gets the current user data
-            // console.log(spentInput);
             var spentObj = spentInput.val().trim();     // console.log(spentTest);
             var spentArr = spentObj.match(regEx);       // console.log(spentVal);  // spentVal returns as an object 
             var spentVal = spentArr.join("");           // console.log(spentVal); converts back to string that only takes in integers and 2 decimal places
@@ -57,11 +56,10 @@ $(document).ready(function () {
         })
     });
 
-    $(document).on('click', '.updateButton', function() {
+    $(document).on('click', '.updateButton', function () {
         // console.log($(this).attr('data-id'));
         var passId = $(this).attr('data-id')
         $(".userEdit").attr('data-id', passId)
-        
         // $('.userEdit').attr("data-id", $(this))
     })
 
@@ -69,9 +67,7 @@ $(document).ready(function () {
         event.preventDefault();
         var updateDescInput = updateDesc.val().trim()
         var updateSpentInput = updateSpent.val().trim();
-        // console.log(this)
         var editID = $(this).attr('data-id');
-        // console.log(id);
         $.ajax({
             method: "PUT",
             url: "api/budget",
@@ -80,11 +76,9 @@ $(document).ready(function () {
                 amount_spent: updateSpentInput,
                 id: editID,
             }
-        }).then(function(){
-            // console.log(data)
+        }).then(function () {                     // console.log(data)
             location.reload();
         })
     });
-
 
 });     // end document ready
