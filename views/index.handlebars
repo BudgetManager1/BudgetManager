@@ -308,8 +308,25 @@
                     </button>
                 </form>
             </div>
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal3">Add money!</a>
+            {{!-- <canvas id="progress-bar" width="300" height="300"></canvas> --}}
+            <div id="modal3" class="modal">
+                <form class="col s12" id='form'>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="add" type="number" class="validate">
+                            <label for="amount">How much money do you wish to add? </label>
+                        </div>
+                    </div>
+                    <div class="btn waves-effect waves-light">
+                        {{!-- <button  type="submit" id="click" name="action" onclick="move()">Add
+                        <i class="material-icons right">send</i>
+                    </button> --}}
+                    </div>
+                </form>
+            </div>
+
             <br>
-            <button class="w3-button w3-green" id="click" onclick="move()">Click Me</button>
             <div class="card z-depth-3 blue-grey">
                 <div class="card-content">
                     <span class="card-title"><strong>Goal: </strong>
@@ -317,14 +334,11 @@
                         <p id="cost"> </p>
                     </span>
                     <div class="myProgress">
-                        <div id="myBar" style="width:20%">20%</div>
+                        <div id="myBar" style="width:10%">10%</div>
                     </div>
                     <br>
 
                 </div>
-                {{!-- <div id="myProgress">
-                        <div id="myBar" onclick="move()">0$</div>
-                    </div> --}}
             </div>
         </div>
     </div>
@@ -335,5 +349,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
 <script type="text/javascript" src="js/doughnut-chart.js"></script>
+<script type="text/javascript" src="js/progressbar.js"></script>
 <script type="text/javascript" src="js/members.js"></script>
 <script type="text/javascript" src="js/grabber.js"></script>
