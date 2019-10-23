@@ -15,48 +15,49 @@
     </div>
 </div>
 <div class="center-align">
-    <!-- <div class="card horizontal">
+    <!-- Adding status bar here
+        <div class="card horizontal">
         <div class="card-stacked">
           <div class="card-content">
             <p>Total: <i class="small material-icons">attach_money</i></p> -->
     <br>
     <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add Expense</a>
     <div id="modal1" class="modal">
-        <form class="col s12" id='user-spending'>
-            <div class="row">
-                {{!-- can we make this smaller and centered? --}}
-                <div class="input-field col s12">
-                    <input id="spent" type="number" class="validate">
-                    <label for="spent">Total $$$ Spent</label>
+        <div class="container">
+            <form class="col s12" id='user-spending'>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="spent" type="number" class="validate">
+                        <label for="spent">Total $$$ Spent</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="name" type="text" class="validate">
-                    <label for="name">Description</label>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="name" type="text" class="validate">
+                        <label for="name">Description</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <select id="category">
-                        <option value="" disabled selected>Choose your option</option>
-                        <option value="Food">Food</option>
-                        <option value="Travel">Travel</option>
-                        <option value="Clothing">Clothing</option>
-                        <option value="Entertainment">Entertainment</option>
-                        <option value="Utilities">Utilities</option>
-                        <option value="Housing">Housing</option>
-                        <option value="Medical">Medical</option>
-                        <option value="Personal">Personal</option>
-                    </select>
-                    <label>Category Select</label>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select id="category">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="Food">Food</option>
+                            <option value="Travel">Travel</option>
+                            <option value="Clothing">Clothing</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Utilities">Utilities</option>
+                            <option value="Housing">Housing</option>
+                            <option value="Medical">Medical</option>
+                            <option value="Personal">Personal</option>
+                        </select>
+                        <label>Category Select</label>
+                    </div>
                 </div>
-            </div>
-            <button class="btn waves-effect waves-light" type="submit" id="submit" name="action">Submit
-                <i class="material-icons right">send</i>
-            </button>
-        </form>
-
+                <button class="btn waves-effect waves-light" type="submit" id="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </form>
+        </div>
     </div>
 </div>
 <br>
@@ -78,10 +79,14 @@
                                     <tr>
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
-                                        <td>Edit this!</td>
+                                        <td>
+                                            <button
+                                                class="updateButton waves-effect waves-light modal-trigger center-align"
+                                                data-id="{{this.id}}" href="#modal3" id="{{id}}">Edit This!</button>
+                                        </td>
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
-                                                transaction.</button>
+                                                transaction!</button>
                                             <span data-category="food" data-amount="{{amount_spent}}"></span>
                                         </td>
                                     </tr>
@@ -105,10 +110,14 @@
                                     <tr>
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
-                                        <td>Edit this!</td>
+                                        <td>
+                                            <button
+                                                class="updateButton waves-effect waves-light modal-trigger center-align"
+                                                data-id="{{this.id}}" href="#modal3" id="{{id}}">Edit This!</button>
+                                        </td>
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
-                                                transaction.</button>
+                                                transaction!</button>
                                             <span data-category="travel" data-amount="{{amount_spent}}"></span>
                                         </td>
                                     </tr>
@@ -132,11 +141,16 @@
                                     <tr>
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
-                                        <td>Edit this!</td>
+                                        <td>
+                                            <button
+                                                class="updateButton waves-effect waves-light modal-trigger center-align"
+                                                data-id="{{this.id}}" href="#modal3" id="{{id}}">Edit This!</button>
+                                        </td>
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
-                                                transaction.</button>
+                                                transaction!</button>
                                             <span data-category="clothing" data-amount="{{amount_spent}}"></span>
+
                                         </td>
                                     </tr>
                                     {{/each}}
@@ -159,11 +173,16 @@
                                     <tr>
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
-                                        <td>Edit this!</td>
+                                        <td>
+                                            <button
+                                                class="updateButton waves-effect waves-light modal-trigger center-align"
+                                                data-id="{{this.id}}" href="#modal3" id="{{id}}">Edit This!</button>
+                                        </td>
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
-                                                transaction.</button>
+                                                transaction!</button>
                                             <span data-category="entertainment" data-amount="{{amount_spent}}"></span>
+
                                         </td>
                                     </tr>
                                     {{/each}}
@@ -187,11 +206,16 @@
                                     <tr>
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
-                                        <td>Edit this!</td>
+                                        <td>
+                                            <button
+                                                class="updateButton waves-effect waves-light modal-trigger center-align"
+                                                data-id="{{this.id}}" href="#modal3" id="{{id}}">Edit This!</button>
+                                        </td>
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
-                                                transaction.</button>
+                                                transaction!</button>
                                             <span data-category="utilities" data-amount="{{amount_spent}}"></span>
+
                                         </td>
                                     </tr>
                                     {{/each}}
@@ -215,11 +239,16 @@
                                     <tr>
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
-                                        <td>Edit this!</td>
+                                        <td>
+                                            <button
+                                                class="updateButton waves-effect waves-light modal-trigger center-align"
+                                                data-id="{{this.id}}" href="#modal3" id="{{id}}">Edit This!</button>
+                                        </td>
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
-                                                transaction.</button>
+                                                transaction!</button>
                                             <span data-category="housing" data-amount="{{amount_spent}}"></span>
+
                                         </td>
                                     </tr>
                                     {{/each}}
@@ -243,10 +272,14 @@
                                     <tr>
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
-                                        <td>Edit this!</td>
+                                        <td>
+                                            <button
+                                                class="updateButton waves-effect waves-light modal-trigger center-align"
+                                                data-id="{{this.id}}" href="#modal3" id="{{id}}">Edit This!</button>
+                                        </td>
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
-                                                transaction.</button>
+                                                transaction!</button>
                                             <span data-category="medical" data-amount="{{amount_spent}}"></span>
                                         </td>
                                     </tr>
@@ -270,10 +303,14 @@
                                     <tr>
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
-                                        <td>Edit this!</td>
+                                        <td>
+                                            <button
+                                                class="updateButton waves-effect waves-light modal-trigger center-align"
+                                                data-id="{{this.id}}" href="#modal3" id="{{id}}">Edit This!</button>
+                                        </td>
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
-                                                transaction.</button>
+                                                transaction!</button>
                                             <span data-category="personal" data-amount="{{amount_spent}}"></span>
                                         </td>
                                     </tr>
@@ -283,30 +320,33 @@
                             </table>
                         </span></div>
                 </li>
-
             </ul>
         </div>
         <div class="col s12 m5">
             <canvas id="doughnut-chart" width="300" height="300"></canvas>
             <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Add your goal!</a>
-            <div id="modal2" class="modal">
-                <form class="col s12" id='form'>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="goal" type="text" class="validate">
-                            <label for="name">Goal</label>
-                        </div>
+            <div class="center-align">
+                <div id="modal2" class="modal">
+                    <div class="container">
+                        <form class="col s12" id='form'>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="goal" type="text" class="validate">
+                                    <label for="name">Goal</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="amount" type="number" class="validate">
+                                    <label for="amount">Total Cost</label>
+                                </div>
+                            </div>
+                            <button class="btn waves-effect waves-light" type="submit" id="submit1" name="action">Submit
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </form>
                     </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="amount" type="number" class="validate">
-                            <label for="amount">Total Cost</label>
-                        </div>
-                    </div>
-                    <button class="btn waves-effect waves-light" type="submit" id="submit1" name="action">Submit
-                        <i class="material-icons right">send</i>
-                    </button>
-                </form>
+                </div>
             </div>
             <br>
             <button class="w3-button w3-green" id="click" onclick="move()">Click Me</button>
@@ -320,16 +360,38 @@
                         <div id="myBar" style="width:20%">20%</div>
                     </div>
                     <br>
-
                 </div>
-                {{!-- <div id="myProgress">
-                        <div id="myBar" onclick="move()">0$</div>
-                    </div> --}}
             </div>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal bottom-sheet">
+        <div class="modal-content">
+            <div class="container">
+                <form class="userEdit">
+                    <h4>Edit Transaction</h4>
+                    <div class="row">
+                        <div class="col s6">
+                            <label for="spent">Updated $$$ Spent</label>
+                            <input id="updateSpent" type="number" class="validate">
+                        </div>
+                        <div class="col s6">
+                            <label for="update">Updated Description</label>
+                            <input id="updateDescription" type="text" class="validate">
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn waves-effect waves-light" type="submit" id="userEdit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+            </form>
         </div>
     </div>
 </div>
 </div>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -337,3 +399,8 @@
 <script type="text/javascript" src="js/doughnut-chart.js"></script>
 <script type="text/javascript" src="js/members.js"></script>
 <script type="text/javascript" src="js/grabber.js"></script>
+
+
+
+
+
