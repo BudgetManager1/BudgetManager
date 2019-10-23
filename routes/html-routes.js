@@ -11,16 +11,18 @@ module.exports = function (app) {
     // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/members");
-    }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    } else {
+      res.sendFile(path.join(__dirname, "../public/login.html"));
+    } 
   });
 
   app.get("/signup", function (req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/members");
+    } else {
+      res.sendFile(path.join(__dirname, "../public/signup.html"));
     }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
 
   // Here we've add our isAuthenticated middleware to this route.
@@ -43,8 +45,7 @@ module.exports = function (app) {
       for (var i = 0; i < dbBudget.length; i++) {
         for (var j = 0; j < categoryArr.length; j++)
           if (dbBudget[i].category == categoryArr[j]) {
-            infoArr.push(dbBudget[i]);
-            // console.log(infoArr)
+            infoArr.push(dbBudget[i]);                      // console.log(infoArr)
           }
       }
 
@@ -69,27 +70,20 @@ module.exports = function (app) {
             createdAt: infoArr[i].createdAt
           }
         )
-      }
-      // console.log(budgetInfo);
+      }                                                 // console.log(budgetInfo);
       testdata = test(budgetInfo)
       res.render('index', { dbBudget: budgetInfo });
-
     });
   });
 
-
-
   app.get("/test", function (req, res) {
-    // console.log(testdata);
     res.json()
   });
-
 
   app.get("/budget", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
   function test(info) {
-    // console.log(info);
     return info;
   }
 

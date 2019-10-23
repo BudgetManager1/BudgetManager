@@ -6,7 +6,7 @@ for (var i = 0; i < budgetData.length; i++) {
     });
 }
 var total = 0;
-for(var i=0;i<budgetData.length;i++){
+for (var i = 0; i < budgetData.length; i++) {
     total += budgetData[i];
 }
 

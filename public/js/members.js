@@ -37,66 +37,41 @@ $(document).ready(function () {
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems, options);
   });
+  // edit transaction modal
+  document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.modal3');
+    var instances = M.Modal.init(elems, options);
+  });
+  $('.modal3').modal();
 
   $('select').formSelect();
 
-  //progress for bar
-  // var i = 0;
-  // function move() {
-  //   if (i == 0) {
-  //     i = 1;
-  //     var elem = document.getElementById("myBar");
-  //     var width = 10;
-  //     var id = setInterval(frame, 10);
-  //     function frame() {
-  //       if (width >= 100) {
-  //         clearInterval(id);
-  //         i = 0;
-  //       } else {
-  //         width++;
-  //         elem.style.width = width + "%";
-  //         elem.innerHTML = width + "%";
-  //       }
-  //     }
-  //   }
-  // }
-
-
   $("#submit1").on("click", function (event) {
     event.preventDefault();
-
     var goal = {
       goalName: $("#goal").val().trim(),
       total: $("#amount").val().trim()
     };
-
     $.post("/api/goals", goal)
-
       .then(function (data) {
-        console.log(data);
-
-        alert("adding goal")
-
         $("#goal").val(""),
-          $("#amount").val("")
-        grabGoals()
-        // move();
+          $("#amount").val(""),
+          grabGoals()
       });
   })
 
-
   function grabGoals() {
     $.get("/api/goals").then(function (data) {
-      console.log("this is goal data")
-      console.log(data)
+      // console.log("this is goal data")
+      // console.log(data)
       $("#wishList").text(`${data[0].wish}`)
       $("#cost").text(`$${data[0].total}`)
-
-
-    });
-
+    }).then(function(){
+      console.log("testsdf")
+      location.reload();
+    })
   }
-  grabGoals();
+  // grabGoals();
 
   $("#click").on("click", function move() {
     var elem = document.getElementById("myBar");
