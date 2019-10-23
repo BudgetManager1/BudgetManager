@@ -53,10 +53,11 @@ $(document).ready(function () {
     };
     $.post("/api/goals", goal)
       .then(function (data) {
-        alert("adding goal")
-        $("#goal").val(""),
-          $("#amount").val("")
-        grabGoals()
+        // alert("adding goal")
+        $("#goal").val("");
+        $("#amount").val("");
+        grabGoals();
+        window.location.reload();
       });
   })
 
