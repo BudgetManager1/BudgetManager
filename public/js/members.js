@@ -65,6 +65,7 @@ $(document).ready(function () {
         $("#addMoney").val("");
         grabGoals();
         $('.modal.open').modal('close');
+        location.reload();
       });
   });
 
@@ -74,9 +75,9 @@ $(document).ready(function () {
       // console.log(data)
       $("#wishList").text(`${data[0].wish}`)
       $("#cost").text(`$${data[0].total}`)
-      // $("#progress-bar").update(`${data[0].progress}`)
+      // $("#progress-bar").html(`${data[0].progress}`)
     });
   }
   grabGoals();
-
+  win
 });
