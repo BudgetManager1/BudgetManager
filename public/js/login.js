@@ -28,15 +28,18 @@ $(document).ready(function() {
       email: email,
       password: password
     })
-      .then(function() {
+      .then(function(response) {
         window.location.replace("/members");
+        console.log(response)
         // If there's an error, log the error
-      })
-      .catch(function(err) {
-        console.log(err);
-      });
-  }
-});
+      }).catch(handleLoginErr);
+  };
+
+  function handleLoginErr(err) {
+    $("#alert .msg").text(err.statusText);
+    console.log(err.statusText)
+  };
+
 var current = null;
 document.querySelector('#email-input').addEventListener('focus', function(e) {
   if (current) current.pause();
@@ -86,3 +89,5 @@ document.querySelector('#login').addEventListener('focus', function(e) {
     }
   });
 });
+
+}); // end document ready
