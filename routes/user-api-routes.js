@@ -44,11 +44,13 @@ module.exports = function(app) {
   app.post("/api/goals", function(req, res){
    var wish = req.body.goalName;
    var total = req.body.total;
+   var progress = req.body.addition
 
     db.Goals.create({
       UserId: req.user.id,
       wish,
-      total
+      total,
+      progress
     })
     var goal = req.body
     res.json(goal);
