@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="grey darken-4">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="/logout">
@@ -9,65 +9,61 @@
 </nav>
 <div class="container-head">
     <div class="row">
-        <div class="col s12">
-            <h1 class="center-align">Welcome</h1>
+        <div class="col s12 m12 l12">
+            <h2 class="center-align grey-text text-lighten-1"><strong>Budget Tracker</strong></h2>
         </div>
     </div>
 </div>
 <div class="center-align">
-    <!-- <div class="card horizontal">
-        <div class="card-stacked">
-          <div class="card-content">
-            <p>Total: <i class="small material-icons">attach_money</i></p> -->
     <br>
-    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Input your transaction here!</a>
+    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add Expense</a>
     <div id="modal1" class="modal">
         <div class="container">
-        <form class="col s12" id='user-spending'>
-            <div class="row">
-                {{!-- can we make this smaller and centered? --}}
-                <div class="input-field col s12">
-                    <input id="spent" type="number" class="validate">
-                    <label for="spent">Total $$$ Spent</label>
+            <form class="col s12 m12 l12" id='user-spending'>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="spent" type="number" class="validate">
+                        <label for="spent">Total $$$ Spent</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="name" type="text" class="validate">
-                    <label for="name">Description</label>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="name" type="text" class="validate">
+                        <label for="name">Description</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <select id="category">
-                        <option value="" disabled selected>Choose your option</option>
-                        <option value="Food">Food</option>
-                        <option value="Travel">Travel</option>
-                        <option value="Clothing">Clothing</option>
-                        <option value="Entertainment">Entertainment</option>
-                        <option value="Utilities">Utilities</option>
-                        <option value="Housing">Housing</option>
-                        <option value="Medical">Medical</option>
-                        <option value="Personal">Personal</option>
-                    </select>
-                    <label>Category Select</label>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select id="category">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="Food">Food</option>
+                            <option value="Travel">Travel</option>
+                            <option value="Clothing">Clothing</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Utilities">Utilities</option>
+                            <option value="Housing">Housing</option>
+                            <option value="Medical">Medical</option>
+                            <option value="Personal">Personal</option>
+                        </select>
+                        <label>Category Select</label>
+                    </div>
                 </div>
-            </div>
-            <button class="btn waves-effect waves-light" type="submit" id="submit" name="action">Submit
-                <i class="material-icons right">send</i>
-            </button>
-        </form>
+                <button class="btn waves-effect waves-light" type="submit" id="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </form>
         </div>
     </div>
+</div>
 </div>
 <br>
 <div class="container">
     <div class="row">
-        <div class="col s12 m7">
-            <ul class="collapsible collapsible-accordion">
+        <div class="col s12 m12 l7">
+            <ul class="collapsible collapsible-accordion blue-grey darken-3">
                 <li>
                     <div class="collapsible-header"><i class="material-icons">restaurant</i>Food</div>
-                    <div class="collapsible-body"><span class="transactions">
+                    <div class="collapsible-body"><span class="transactions blue-text text-lighten-5">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
@@ -80,40 +76,14 @@
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
                                         <td>
-                                            {{!-- This creates a bottom modal, we can also use other modals. --}}
-                                            <!-- Modal Trigger -->
                                             <button
                                                 class="updateButton waves-effect waves-light modal-trigger center-align"
-                                                data-id="{{this.id}}" href="#modal3">Edit This!</button>
-                                            {{!-- Modal --}}
-                                            <div id="modal3" class="modal bottom-sheet">
-                                                <div class="modal-content">
-                                                    <div class="container">
-                                                        <h4>Edit Transaction</h4>
-                                                        <div class="row">
-                                                            <div class="col s6">
-                                                                <label for="spent">Updated $$$ Spent</label>
-                                                                <input class="updateSpent" type="number"
-                                                                    class="validate">
-                                                            </div>
-                                                            <div class="col s6">
-                                                                <label for="spent">Updated Description</label>
-                                                                <input id="updateDescription" type="number"
-                                                                    class="validate">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <a href="#!"
-                                                            class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                data-id="{{this.id}}" href="#modal3" id="{{id}}">Edit This!</button>
                                         </td>
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
                                                 transaction!</button>
-                                            <span id="food-{{id}}" data-test="{{amount_spent}}"></span>
+                                            <span data-category="food" data-amount="{{amount_spent}}"></span>
                                         </td>
                                     </tr>
                                     {{/each}}
@@ -124,7 +94,7 @@
                 </li>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">place</i>Travel</div>
-                    <div class="collapsible-body"><span class="transactions">
+                    <div class="collapsible-body"><span class="transactions blue-text text-lighten-5">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
@@ -137,40 +107,14 @@
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
                                         <td>
-                                            {{!-- This creates a bottom modal, we can also use other modals. --}}
-                                            <!-- Modal Trigger -->
                                             <button
                                                 class="updateButton waves-effect waves-light modal-trigger center-align"
-                                                data-id="{{this.id}}" href="#modal3">Edit This!</button>
-                                            {{!-- Modal --}}
-                                            <div id="modal3" class="modal bottom-sheet">
-                                                <div class="modal-content">
-                                                    <div class="container">
-                                                        <h4>Edit Transaction</h4>
-                                                        <div class="row">
-                                                            <div class="col s6">
-                                                                <label for="spent">Updated $$$ Spent</label>
-                                                                <input class="updateSpent" type="number"
-                                                                    class="validate">
-                                                            </div>
-                                                            <div class="col s6">
-                                                                <label for="spent">Updated Description</label>
-                                                                <input id="updateDescription" type="number"
-                                                                    class="validate">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <a href="#!"
-                                                            class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                data-id="{{this.id}}" href="#modal3" id="{{id}}">Edit This!</button>
                                         </td>
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
                                                 transaction!</button>
-                                            <span id="travel-{{id}}" data-test="{{amount_spent}}"></span>
+                                            <span data-category="travel" data-amount="{{amount_spent}}"></span>
                                         </td>
                                     </tr>
                                     {{/each}}
@@ -181,7 +125,7 @@
                 </li>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">accessibility</i>Clothing</div>
-                    <div class="collapsible-body"><span class="transactions">
+                    <div class="collapsible-body"><span class="transactions blue-text text-lighten-5">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
@@ -194,40 +138,15 @@
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
                                         <td>
-                                            {{!-- This creates a bottom modal, we can also use other modals. --}}
-                                            <!-- Modal Trigger -->
                                             <button
                                                 class="updateButton waves-effect waves-light modal-trigger center-align"
-                                                data-id="{{this.id}}" href="#modal3">Edit This!</button>
-                                            {{!-- Modal --}}
-                                            <div id="modal3" class="modal bottom-sheet">
-                                                <div class="modal-content">
-                                                    <div class="container">
-                                                        <h4>Edit Transaction</h4>
-                                                        <div class="row">
-                                                            <div class="col s6">
-                                                                <label for="spent">Updated $$$ Spent</label>
-                                                                <input class="updateSpent" type="number"
-                                                                    class="validate">
-                                                            </div>
-                                                            <div class="col s6">
-                                                                <label for="spent">Updated Description</label>
-                                                                <input id="updateDescription" type="number"
-                                                                    class="validate">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <a href="#!"
-                                                            class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                data-id="{{this.id}}" href="#modal3" id="{{id}}">Edit This!</button>
                                         </td>
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
                                                 transaction!</button>
-                                            <span id="clothing-{{id}}" data-test="{{amount_spent}}"></span>
+                                            <span data-category="clothing" data-amount="{{amount_spent}}"></span>
+
                                         </td>
                                     </tr>
                                     {{/each}}
@@ -238,7 +157,7 @@
                 </li>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">local_movies</i>Entertainment</div>
-                    <div class="collapsible-body"><span class="transactions">
+                    <div class="collapsible-body"><span class="transactions blue-text text-lighten-5">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
@@ -246,45 +165,20 @@
                                         <th>Amount Spent</th>
                                         <th>Edit Transaction</th>
                                         <th>Delete</th>
-                                        {{#each dbBudget.Travel}}
+                                        {{#each dbBudget.Entertainment}}
                                     <tr>
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
                                         <td>
-                                            {{!-- This creates a bottom modal, we can also use other modals. --}}
-                                            <!-- Modal Trigger -->
                                             <button
                                                 class="updateButton waves-effect waves-light modal-trigger center-align"
-                                                data-id="{{this.id}}" href="#modal3">Edit This!</button>
-                                            {{!-- Modal --}}
-                                            <div id="modal3" class="modal bottom-sheet">
-                                                <div class="modal-content">
-                                                    <div class="container">
-                                                        <h4>Edit Transaction</h4>
-                                                        <div class="row">
-                                                            <div class="col s6">
-                                                                <label for="spent">Updated $$$ Spent</label>
-                                                                <input class="updateSpent" type="number"
-                                                                    class="validate">
-                                                            </div>
-                                                            <div class="col s6">
-                                                                <label for="spent">Updated Description</label>
-                                                                <input id="updateDescription" type="number"
-                                                                    class="validate">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <a href="#!"
-                                                            class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                data-id="{{this.id}}" href="#modal3" id="{{id}}">Edit This!</button>
                                         </td>
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
                                                 transaction!</button>
-                                            <span id="entertainment-{{id}}" data-test="{{amount_spent}}"></span>
+                                            <span data-category="entertainment" data-amount="{{amount_spent}}"></span>
+
                                         </td>
                                     </tr>
                                     {{/each}}
@@ -296,7 +190,7 @@
                 </li>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">whatshot</i>Utilities</div>
-                    <div class="collapsible-body"><span class="transactions">
+                    <div class="collapsible-body"><span class="transactions blue-text text-lighten-5">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
@@ -309,40 +203,15 @@
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
                                         <td>
-                                            {{!-- This creates a bottom modal, we can also use other modals. --}}
-                                            <!-- Modal Trigger -->
                                             <button
                                                 class="updateButton waves-effect waves-light modal-trigger center-align"
-                                                data-id="{{this.id}}" href="#modal3">Edit This!</button>
-                                            {{!-- Modal --}}
-                                            <div id="modal3" class="modal bottom-sheet">
-                                                <div class="modal-content">
-                                                    <div class="container">
-                                                        <h4>Edit Transaction</h4>
-                                                        <div class="row">
-                                                            <div class="col s6">
-                                                                <label for="spent">Updated $$$ Spent</label>
-                                                                <input class="updateSpent" type="number"
-                                                                    class="validate">
-                                                            </div>
-                                                            <div class="col s6">
-                                                                <label for="spent">Updated Description</label>
-                                                                <input id="updateDescription" type="number"
-                                                                    class="validate">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <a href="#!"
-                                                            class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                data-id="{{this.id}}" href="#modal3" id="{{id}}">Edit This!</button>
                                         </td>
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
                                                 transaction!</button>
-                                            <span id="utilities-{{id}}" data-test="{{amount_spent}}"></span>
+                                            <span data-category="utilities" data-amount="{{amount_spent}}"></span>
+
                                         </td>
                                     </tr>
                                     {{/each}}
@@ -354,7 +223,7 @@
                 </li>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">home</i>Housing</div>
-                    <div class="collapsible-body"><span class="transactions">
+                    <div class="collapsible-body"><span class="transactions blue-text text-lighten-5">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
@@ -367,40 +236,15 @@
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
                                         <td>
-                                            {{!-- This creates a bottom modal, we can also use other modals. --}}
-                                            <!-- Modal Trigger -->
                                             <button
                                                 class="updateButton waves-effect waves-light modal-trigger center-align"
-                                                data-id="{{this.id}}" href="#modal3">Edit This!</button>
-                                            {{!-- Modal --}}
-                                            <div id="modal3" class="modal bottom-sheet">
-                                                <div class="modal-content">
-                                                    <div class="container">
-                                                        <h4>Edit Transaction</h4>
-                                                        <div class="row">
-                                                            <div class="col s6">
-                                                                <label for="spent">Updated $$$ Spent</label>
-                                                                <input class="updateSpent" type="number"
-                                                                    class="validate">
-                                                            </div>
-                                                            <div class="col s6">
-                                                                <label for="spent">Updated Description</label>
-                                                                <input id="updateDescription" type="number"
-                                                                    class="validate">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <a href="#!"
-                                                            class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                data-id="{{this.id}}" href="#modal3" id="{{id}}">Edit This!</button>
                                         </td>
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
                                                 transaction!</button>
-                                            <span id="housing-{{id}}" data-test="{{amount_spent}}"></span>
+                                            <span data-category="housing" data-amount="{{amount_spent}}"></span>
+
                                         </td>
                                     </tr>
                                     {{/each}}
@@ -412,7 +256,7 @@
                 </li>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">local_hospital</i>Medical</div>
-                    <div class="collapsible-body"><span class="transactions">
+                    <div class="collapsible-body"><span class="transactions blue-text text-lighten-5">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
@@ -425,40 +269,14 @@
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
                                         <td>
-                                            {{!-- This creates a bottom modal, we can also use other modals. --}}
-                                            <!-- Modal Trigger -->
                                             <button
                                                 class="updateButton waves-effect waves-light modal-trigger center-align"
-                                                data-id="{{this.id}}" href="#modal3">Edit This!</button>
-                                            {{!-- Modal --}}
-                                            <div id="modal3" class="modal bottom-sheet">
-                                                <div class="modal-content">
-                                                    <div class="container">
-                                                        <h4>Edit Transaction</h4>
-                                                        <div class="row">
-                                                            <div class="col s6">
-                                                                <label for="spent">Updated $$$ Spent</label>
-                                                                <input class="updateSpent" type="number"
-                                                                    class="validate">
-                                                            </div>
-                                                            <div class="col s6">
-                                                                <label for="spent">Updated Description</label>
-                                                                <input id="updateDescription" type="number"
-                                                                    class="validate">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <a href="#!"
-                                                            class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                data-id="{{this.id}}" href="#modal3" id="{{id}}">Edit This!</button>
                                         </td>
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
                                                 transaction!</button>
-                                            <span id="medical-{{id}}" data-test="{{amount_spent}}"></span>
+                                            <span data-category="medical" data-amount="{{amount_spent}}"></span>
                                         </td>
                                     </tr>
                                     {{/each}}
@@ -469,7 +287,7 @@
                 </li>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">person</i>Personal</div>
-                    <div class="collapsible-body"><span class="transactions">
+                    <div class="collapsible-body"><span class="transactions blue-text text-lighten-5">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
@@ -482,40 +300,14 @@
                                         <td>{{description}}</td>
                                         <td>{{amount_spent}}</td>
                                         <td>
-                                            {{!-- This creates a bottom modal, we can also use other modals. --}}
-                                            <!-- Modal Trigger -->
                                             <button
                                                 class="updateButton waves-effect waves-light modal-trigger center-align"
-                                                data-id="{{this.id}}" href="#modal3">Edit This!</button>
-                                            {{!-- Modal --}}
-                                            <div id="modal3" class="modal bottom-sheet">
-                                                <div class="modal-content">
-                                                    <div class="container">
-                                                        <h4>Edit Transaction</h4>
-                                                        <div class="row">
-                                                            <div class="col s6">
-                                                                <label for="spent">Updated $$$ Spent</label>
-                                                                <input class="updateSpent" type="number"
-                                                                    class="validate">
-                                                            </div>
-                                                            <div class="col s6">
-                                                                <label for="spent">Updated Description</label>
-                                                                <input id="updateDescription" type="number"
-                                                                    class="validate">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <a href="#!"
-                                                            class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                data-id="{{this.id}}" href="#modal3" id="{{id}}">Edit This!</button>
                                         </td>
                                         <td>
                                             <button class="deletebutton" data-id="{{this.id}}">Delete
                                                 transaction!</button>
-                                            <span id="personal-{{id}}" data-test="{{amount_spent}}"></span>
+                                            <span data-category="personal" data-amount="{{amount_spent}}"></span>
                                         </td>
                                     </tr>
                                     {{/each}}
@@ -526,47 +318,94 @@
                 </li>
             </ul>
         </div>
-        <div class="col s12 m5">
+        <div class="col s12 m12 l5">
             <canvas id="doughnut-chart" width="300" height="300"></canvas>
-        </div>
-        <div class="col s12 m5">
             <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Add your goal!</a>
-            <div id="modal2" class="modal">
+            <div class="center-align">
+                <div id="modal2" class="modal">
+                    <div class="container">
+                        <form class="col s12" id='form'>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="goal" type="text" class="validate">
+                                    <label for="name">Goal</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="amount" type="number" class="validate">
+                                    <label for="amount">Total Cost</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="addMoney" type="number" class="validate">
+                                    <label for="money">How much money do you wish to add? </label>
+                                </div>
+                            </div>
+                            <button class="btn waves-effect waves-light" type="submit" id="submit1" name="action">Submit
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {{!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal3">Add money!</a>
+            <div id="modal3" class="modal">
                 <form class="col s12" id='form'>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="goal" type="text" class="validate">
-                            <label for="name">Goal</label>
+                            <input id="addMoney" type="number" class="validate">
+                            <label for="amount">How much money do you wish to add? </label>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="amount" type="number" class="validate">
-                            <label for="amount">Total Cost</label>
-                        </div>
-                    </div>
-                    <button class="btn waves-effect waves-light" type="submit" id="submit1" name="action">Submit
+
+                    <button class="btn waves-effect waves-light" type="submit" id="add" name="action">Add
                         <i class="material-icons right">send</i>
                     </button>
+
                 </form>
-            </div>
-            <div class="card">
+            </div> --}}
+
+            <br>
+            <div class="card z-depth-3 blue-grey">
                 <div class="card-content">
                     <span class="card-title"><strong>Goal: </strong>
                         <p id="wishList"> </p>
                         <p id="cost"> </p>
                     </span>
-                    <div id="myProgress">
-                        <div id="myBar">0$</div>
-                        <!-- <div class="input-field col s5">
-                <input id="name" type="text" class="validate">
-                <label for="name">Name</label>
-              </div> -->
-                    </div>
+                    <canvas id="progress-bar"></canvas>
+                    <br>
                 </div>
             </div>
         </div>
     </div>
+
+    <div id="modal3" class="modal bottom-sheet">
+        <div class="modal-content">
+            <div class="container">
+                <form class="userEdit">
+                    <h4>Edit Transaction</h4>
+                    <div class="row">
+                        <div class="col s6">
+                            <label for="spent">Updated $$$ Spent</label>
+                            <input id="updateSpent" type="number" class="validate">
+                        </div>
+                        <div class="col s6">
+                            <label for="update">Updated Description</label>
+                            <input id="updateDescription" type="text" class="validate">
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn waves-effect waves-light" type="submit" id="userEdit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
 </div>
 
 
@@ -574,7 +413,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
 <script type="text/javascript" src="js/doughnut-chart.js"></script>
+<script type="text/javascript" src="js/progressbar.js"></script>
 <script type="text/javascript" src="js/members.js"></script>
 <script type="text/javascript" src="js/grabber.js"></script>
-
-{{!-- <script type="text/javascript" src="js/delete.js"></script> --}}

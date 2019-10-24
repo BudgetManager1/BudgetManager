@@ -17,7 +17,6 @@ module.exports = function (app) {
       });
     }
     else if (req.user.id === undefined) {
-      console.log("undefined user")
       res.redirect("/");
     } else {                            //console.log("redirected to members")
       res.redirect("/members");
@@ -25,12 +24,10 @@ module.exports = function (app) {
   });
 
   app.post("/api/budget", function (req, res) {
-
     db.Budget.create(req.body);
   });
 
   app.delete("/api/budget/:id", function(req, res) {
-
     db.Budget.destroy({
       where: {
         id: req.params.id
@@ -45,7 +42,7 @@ module.exports = function (app) {
       req.body,
       {
         where:{
-          id:req.body.id
+          id: req.body.id
         }
       }).then(function(dbBudget) {
         res.json(dbBudget);

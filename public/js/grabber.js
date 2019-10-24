@@ -1,24 +1,21 @@
 $(document).ready(function () {
-    console.log("document ready")
-
     var spentInput = $("#spent");
     var category = $("#category");
     var regEx = /^[0-9]+([.,][0-9]{2})?$/g;
+    var updateDesc = $("#updateDescription");
+    var updateSpent = $("#updateSpent");
 
     $(document).on("submit", "#user-spending", grabUserSubmit);
 
     function grabUserSubmit(event) {
         event.preventDefault();
         $.get('/api/user_data', function (userData) {   // gets the current user data
-            // console.log(spentInput);
             var spentObj = spentInput.val().trim();     // console.log(spentTest);
             var spentArr = spentObj.match(regEx);       // console.log(spentVal);  // spentVal returns as an object 
             var spentVal = spentArr.join("");           // console.log(spentVal); converts back to string that only takes in integers and 2 decimal places
-
             var description = $('#name').val().trim();
-            // console.log("clicked")
-            // won't accept the form if fields have not been filled out
-            if (!spentVal) {                            // console.log("user wants to submit form!") 
+
+            if (!spentVal) {                            // won't accept the form if fields have not been filled out 
                 return;
             }
             return insertData({
@@ -32,21 +29,19 @@ $(document).ready(function () {
         });
     }
 
-    function insertData(budgetData) {               // console.log(budgetData) -- object
+    function insertData(budgetData) {                   // console.log(budgetData) -- object
         return $.post("/api/budget", budgetData)
-            .then(grabBudget);                      // console.log(grabBudget);
+            .then(grabBudget);                          // console.log(grabBudget);
     }
 
     function grabBudget() {
         return $.get('/api/budget', function (res) {
-            // console.log(res);
             spentInput.val("");
         });
     };
 
     $(document).on("click", ".deletebutton", function () {
         var id = $(this).data("id");
-        console.log(id)
         // Send the DELETE request.
         $.ajax({
             method: "DELETE",
@@ -56,14 +51,26 @@ $(document).ready(function () {
         })
     });
 
-    $(document).on("click", ".updateButton", function () {  
-        var id = $(this).data("id");
-        console.log(id)
+    $(document).on('click', '.updateButton', function () {
+        var passId = $(this).attr('data-id')
+        $(".userEdit").attr('data-id', passId)
+    })
+
+    $(document).on("submit", ".userEdit", function (data) {
+        event.preventDefault();
+        var updateDescInput = updateDesc.val().trim()
+        var updateSpentInput = updateSpent.val().trim();
+        var editID = $(this).attr('data-id');
         $.ajax({
             method: "PUT",
-            url: "api/budget"
-        }).then(function(){
-            // location.reload();
+            url: "api/budget",
+            data: {
+                description: updateDescInput,
+                amount_spent: updateSpentInput,
+                id: editID,
+            }
+        }).then(function () {
+            location.reload();
         })
     });
 
