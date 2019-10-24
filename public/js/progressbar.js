@@ -2,8 +2,7 @@ var progressData = [0];
 var progress = ['goal'];
 
 $.get("/api/goals").then(function (data) {
-    console.log(data);
-
+    // console.log(data);
     Chart.defaults.global.defaultFontColor = '#000000'
 
     new Chart(document.getElementById("progress-bar").getContext('2d'), {
