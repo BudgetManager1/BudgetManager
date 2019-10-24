@@ -17,7 +17,6 @@ module.exports = function (app) {
       });
     }
     else if (req.user.id === undefined) {
-      // console.log("undefined user")
       res.redirect("/");
     } else {                            //console.log("redirected to members")
       res.redirect("/members");
@@ -39,7 +38,6 @@ module.exports = function (app) {
   });
 
   app.put("/api/budget/", function (req,res){
-    // console.log(req.body)
     db.Budget.update(
       req.body,
       {

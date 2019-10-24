@@ -13,11 +13,9 @@ $(document).ready(function () {
             var spentObj = spentInput.val().trim();     // console.log(spentTest);
             var spentArr = spentObj.match(regEx);       // console.log(spentVal);  // spentVal returns as an object 
             var spentVal = spentArr.join("");           // console.log(spentVal); converts back to string that only takes in integers and 2 decimal places
-
             var description = $('#name').val().trim();
-            // console.log("clicked")
-            // won't accept the form if fields have not been filled out
-            if (!spentVal) {                            // console.log("user wants to submit form!") 
+
+            if (!spentVal) {                            // won't accept the form if fields have not been filled out 
                 return;
             }
             return insertData({
@@ -31,9 +29,9 @@ $(document).ready(function () {
         });
     }
 
-    function insertData(budgetData) {               // console.log(budgetData) -- object
+    function insertData(budgetData) {                   // console.log(budgetData) -- object
         return $.post("/api/budget", budgetData)
-            .then(grabBudget);                      // console.log(grabBudget);
+            .then(grabBudget);                          // console.log(grabBudget);
     }
 
     function grabBudget() {
