@@ -2,6 +2,18 @@
 
 ## **[Link to live site](https://safe-depths-87257.herokuapp.com/)**
 
+#### Prerequisites
+
+* Just sign up!
+* Or if you don't want to sign up, use one of our demo accounts. They might be prefilled with previous data though. Not to worry! You can delete the old data if you choose to!
+
+```
+* email: test@test.com || password: test 
+* email: demo@demo.com || password: demo
+```
+
+!["logindemo"](public/images/logindemo.gif)
+
 ### Introduction
 
 With this app you can do a few things. Our project is a budget tracker. With our budget tracker, we present a doughnut chart, similar to what you may see from your credit card statements. It will show you how much you spent in each category, and your total spent. The difference is, you enter how much you spent, so be honest!
@@ -19,18 +31,6 @@ For example:
 ## Using the app
 
 In order for you to use the app, you have to signup to access your personal tracker. Once logged in, your presented with a blank slate page where you can start inputting your spending.
-
-#### Prerequisites
-
-* Just sign up!
-* Or if you don't want to sign up, use one of our demo accounts. They might be prefilled with previous data though. Not to worry! You can delete the old data if you choose to!
-
-```
-* email: test@test.com || password: test 
-* email: demo@demo.com || password: demo
-```
-
-!["logindemo"](public/images/logindemo.gif)
 
 ### Functions
 
