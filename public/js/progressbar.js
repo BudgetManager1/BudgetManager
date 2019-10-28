@@ -2,9 +2,10 @@ var progressData = [0];
 var progress = ['goal'];
 
 $.get("/api/goals").then(function (data) {
+
     console.log(data);
     var progressInPer = (data[0].progress / data[0].total) * 100;
-
+  
     Chart.defaults.global.defaultFontColor = '#000000'
 
     new Chart(document.getElementById("progress-bar").getContext('2d'), {
