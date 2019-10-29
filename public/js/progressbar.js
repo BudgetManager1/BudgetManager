@@ -1,5 +1,11 @@
-var progressData = [0];
-var progress = ['goal'];
+
+var wish = $('#progress-bar').data('wish');
+var total = $('#progress-bar').data('total');
+var progress = $('#progress-bar').data('progress');
+var percentage = progress / total * 100;
+
+// var progressData = [0];
+// var progress = ['goal'];
 
 $.get("/api/goals").then(function (data) {
 
@@ -15,7 +21,7 @@ $.get("/api/goals").then(function (data) {
             datasets: [{
                 label: "Here's your progress",
                 backgroundColor: ["#3e95cd"],
-                data: [progressInPercent],
+                data: [percentage],
             }],
         },
         options: {
