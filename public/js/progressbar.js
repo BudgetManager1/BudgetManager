@@ -1,7 +1,7 @@
 var wish = $('#progress-bar').data('wish');
 var total = $('#progress-bar').data('total');
 var progress = $('#progress-bar').data('progress');
-var percentage = progress / total;
+var percentage = progress / total * 100;
 console.log(wish + total + progress + percentage)
 Chart.defaults.global.defaultFontColor = '#000000'
 new Chart(document.getElementById("progress-bar").getContext('2d'), {
@@ -15,7 +15,7 @@ new Chart(document.getElementById("progress-bar").getContext('2d'), {
         }],
     },
     options: {
-        scales: { xAxes: [{ id: 'x-axis-1', type: 'linear', position: 'left', ticks: { min: 0, max: 1.00 } }] },
+        scales: { xAxes: [{ id: 'x-axis-1', type: 'linear', position: 'left', ticks: { min: 0, max: 100 } }] },
     }
 
 });
