@@ -1,3 +1,4 @@
+
 var progressData = [0];
 var progress = ['goal'];
 
@@ -26,5 +27,4 @@ $.get("/api/goals").then(function (data) {
     });
 
 })
-
-
+});
