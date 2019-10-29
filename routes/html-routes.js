@@ -6,14 +6,13 @@ var db = require('../models');
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 var budgetInfo = {};
 module.exports = function (app) {
-  var testdata;
   app.get("/", function (req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/members");
     } else {
       res.sendFile(path.join(__dirname, "../public/login.html"));
-    } 
+    }
   });
 
   app.get("/signup", function (req, res) {
@@ -28,6 +27,7 @@ module.exports = function (app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get('/members', isAuthenticated, function (req, res) {
+    var info;
     db.Budget.findAll({
       where: {
         UserId: req.user.id
@@ -49,7 +49,7 @@ module.exports = function (app) {
           }
       }
 
-      budgetInfo = {
+      var budgetInfo = {
         Travel: [],
         Entertainment: [],
         Food: [],
@@ -71,20 +71,31 @@ module.exports = function (app) {
           }
         )
       }                                                 // console.log(budgetInfo);
-      testdata = test(budgetInfo)
-      res.render('index', { dbBudget: budgetInfo });
+      info = budgetInfo;
+    }).then(function () {
+      db.Goals.findAll({
+        where: {
+          UserId: req.user.id
+        },
+        include: [db.User],
+        order: [['createdAt', 'DESC']]
+      }).then(function (dbGoals) {
+        // console.log(dbGoals[0].dataValues);
+        // console.log('------------------------------------------------------------');
+        // console.log(dbGoals[0].dataValues.id);
+        // console.log(dbGoals[0].dataValues.wish);
+        // console.log(dbGoals[0].dataValues.total);
+        // console.log(dbGoals[0].dataValues.progress);
+        // console.log('----------------------------------------------');
+        res.render('index', {
+          dbBudget: info,
+          dbGoals: dbGoals
+        }); 
+      });
     });
-  });
-
-  app.get("/test", function (req, res) {
-    res.json()
   });
 
   app.get("/budget", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
-  function test(info) {
-    return info;
-  }
-
 };

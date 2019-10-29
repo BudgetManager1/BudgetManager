@@ -32,5 +32,4 @@ $.get("/api/goals").then(function (data) {
     });
 
 })
-
-
+});
