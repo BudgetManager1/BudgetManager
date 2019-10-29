@@ -3,7 +3,7 @@ var progress = ['goal'];
 
 $.get("/api/goals").then(function (data) {
     console.log(data);
-    var progressInPer = (data[0].progress / data[0].total) * 100;
+    var progressInPercent = (data[0].progress / data[0].total) * 100;
 
     Chart.defaults.global.defaultFontColor = '#000000'
 
@@ -14,7 +14,7 @@ $.get("/api/goals").then(function (data) {
             datasets: [{
                 label: "Here's your progress",
                 backgroundColor: ["#3e95cd"],
-                data: [progressInPer],
+                data: [progressInPercent],
             }],
         },
         options: {
