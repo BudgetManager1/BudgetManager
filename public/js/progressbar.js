@@ -2,6 +2,7 @@ var progressData = [0];
 var progress = ['goal'];
 
 $.get("/api/goals").then(function (data) {
+
     console.log(data);
     var progressInPercent = (data[0].progress / data[0].total) * 100;
 
