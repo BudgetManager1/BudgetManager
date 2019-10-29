@@ -55,7 +55,7 @@ $(document).ready(function () {
     // var total = 100;
     // var progress = total / goal.addition;
 
-    console.log(progress)
+    // console.log(progress)
 
     $.post("/api/goals", goal)
       .then(function (data) {
@@ -79,5 +79,4 @@ $(document).ready(function () {
     });
   }
   grabGoals();
-  win
 });
