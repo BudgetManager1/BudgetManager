@@ -52,14 +52,10 @@ $(document).ready(function () {
       total: $("#amount").val().trim(),
       addition: $("#addMoney").val().trim()
     };
-    // var total = 100;
-    // var progress = total / goal.addition;
-
-    // console.log(progress)
+    console.log(progress)
 
     $.post("/api/goals", goal)
       .then(function (data) {
-        // alert("adding goal")
         $("#goal").val("");
         $("#amount").val("");
         $("#addMoney").val("");
@@ -71,11 +67,8 @@ $(document).ready(function () {
 
   function grabGoals() {
     $.get("/api/goals").then(function (data) {
-      // console.log("this is goal data")
-      // console.log(data)
       $("#wishList").text(`${data[0].wish}`)
       $("#cost").text(`$${data[0].total}`)
-      // $("#progress-bar").html(`${data[0].progress}`)
     });
   }
   grabGoals();
