@@ -80,13 +80,13 @@ module.exports = function (app) {
         include: [db.User],
         order: [['createdAt', 'DESC']]
       }).then(function (dbGoals) {
-        console.log(dbGoals[0].dataValues);
-        console.log('------------------------------------------------------------');
-        console.log(dbGoals[0].dataValues.id);
-        console.log(dbGoals[0].dataValues.wish);
-        console.log(dbGoals[0].dataValues.total);
-        console.log(dbGoals[0].dataValues.progress);
-        console.log('----------------------------------------------');
+                                            // console.log(dbGoals[0].dataValues);
+                                            // console.log('------------------------------------------------------------');
+                                            // console.log(dbGoals[0].dataValues.id);
+                                            // console.log(dbGoals[0].dataValues.wish);
+                                            // console.log(dbGoals[0].dataValues.total);
+                                            // console.log(dbGoals[0].dataValues.progress);
+                                            // console.log('----------------------------------------------');
         res.render('index', {
           dbBudget: info,
           dbGoals: dbGoals
