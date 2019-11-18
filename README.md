@@ -69,7 +69,7 @@ Just like you did for adding a new transaction, you can also add a goal. Just cl
 * Sequelize
 
 ## Future Developments
-In the future we would like to implement a monthly goal, and compare spending habits against all users. We can also improve on our styles, and responsiveness of our website. If users forget their password, they can't actually reset their password, at the moment. Adding a "Forgot Password" feature would be helpful in this situtation. Lastly, we'd like to use an Api to dynamically create columns tailored to each user.
+In the future we would like to implement a monthly goal, and compare spending habits against all users. We can also improve on our styles, and responsiveness of our website. If users forget their password, they can't actually reset their password, at the moment. Adding a "Forgot Password" feature would be helpful in this situation. Lastly, we'd like to use an Api to dynamically create columns tailored to each user.
 
 ## Authors
 Orlando Corona, James Grodzicki, Zaya Zaw
